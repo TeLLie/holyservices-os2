@@ -1,0 +1,34 @@
+########################################
+
+nuvoX  v:0.4
+
+Icon theme for KDE 3.x. 
+
+########################################
+
+INSTALL
+Use kcontrol to install the icon set.
+
+########################################
+
+THANKS TO(or sub-authors):
+The authors' theme icons that based this theme:
+nuovola v:1.0        >David Vignoni 
+nuoveXT-1.6         >Alexandre Moore
+OS-L                     >Guppetto
+Tulliana-2	             >M. Umut Pulat
+(some icons of other theme)
+
+########################################
+
+AUTHOR
+Name: Xavier Corredor Llano
+Location: Bogotá, Colombia
+E-mail: xavier.corredor.llano@gmail.com
+
+########################################
+
+LICENSE
+
+    Released under GNU GENERAL PUBLIC LICENSE (GPL) v.2
+    Read to license.txt

@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+"http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<article>
+  <title>Holy Services</title>
+
+  <articleinfo>
+    <date>10-2011</date>
+
+    <author>
+      <surname>Jan 'Koviš' Struhár</surname>
+    </author>
+
+    <releaseinfo>1.0.0.20</releaseinfo>
+
+    <address><email>kovis@users.sourceforge.net</email></address>
+
+    <abstract>
+      <para>Short user manual for HolyServices application</para>
+    </abstract>
+  </articleinfo>
+
+  <section>
+    <title>Introduction</title>
+
+    <para>Primary goal of application is to bring overview into holy service
+    planning in small parishes. Program enables registration of intentions for
+    holy services as the members of parish demand it.</para>
+
+    <para>The author maintained the collecting of holy service intentions for
+    eight years with predecessor of this program. The experience he gathered
+    is (hopefully) imbued in this, from ground-up built remake.</para>
+
+    <para>As main highlights of application can be counted:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>better overview about services over the year - the main screen
+        of application resembles to yearly calendar page with colored boxes
+        representing holy services</para>
+      </listitem>
+
+      <listitem>
+        <para>intention reuse - for the holy service client is offered a
+        selection from intentions from previous year as they tend to be
+        repeated or only slightly extended</para>
+      </listitem>
+
+      <listitem>
+        <para>holy service clients are sometimes visually challenged - big
+        font of screen displaying holy service detail helps them to cooperate
+        with you</para>
+      </listitem>
+
+      <listitem>
+        <para>services can be quickly filtered by priest or church to get an
+        overview about load of particular priest/church in the parish</para>
+      </listitem>
+
+      <listitem>
+        <para>output can be easily turned to web contents or
+        spreadsheet</para>
+      </listitem>
+
+      <listitem>
+        <para>no national codepage/diacritic issues - application is fully
+        <abbrev>UNICODE</abbrev> compliant</para>
+      </listitem>
+
+      <listitem>
+        <para>no database driver configuration, no administration tasks
+        required</para>
+      </listitem>
+
+      <listitem>
+        <para>easy backup - data is just one file</para>
+      </listitem>
+
+      <listitem>
+        <para>open code and open, standard data format - data is just plain,
+        text based <abbrev>XML</abbrev> format that can be converted easily to
+        different format</para>
+      </listitem>
+
+      <listitem>
+        <para>easy internationalization - with little effort the application
+        can be extended to work in another language mutation</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+
+  <section>
+    <title>Intended users</title>
+
+    <para>Priests, their layman helpers can take advantage of using this
+    application.</para>
+
+    <para>In our parish usually one person gathers the majority intentions for
+    the whole year in one or two sessions at the end of year. The rest of
+    intentions is registered continuously as they come - either by responsible
+    person or priest self.</para>
+  </section>
+
+  <section>
+    <title>Hardware and software requirements</title>
+
+    <para>The requirements are not really dramatic - common office PC is
+    enough. The screen resolution should be at least 1024x768 to avoid
+    scrollbars appearance in the calendar cells.</para>
+
+    <para>It is rather helpful to have <filename>.xml</filename> file type
+    extension having associated with your Web browser with
+    <abbrev>XSLT</abbrev> transformation capability - any modern browser like
+    <application>Mozilla Firefox</application> or
+    <application><abbrev>MS</abbrev> Internet Explorer</application> will
+    do.</para>
+
+    <para>If you like to fine-tune holy service plan within of spreadsheet
+    application (like our priest), it is practical to register
+    <filename>.csv</filename> file type to be opened by your
+    spreadsheet.</para>
+
+    <para>For users of Microsoft operating systems is every needed component
+    included in the installation kit.</para>
+
+    <para>Linux users need the QT libraries (download on <ulink
+    url="http://www.trolltech.com/developer/downloads/qt/x11">Nokia software
+    web</ulink>) to have installed on their system. The required version is
+    min. 4.5.0. Usually this requirement is fulfilled when you have KDE
+    desktop environment version 4.x installed.</para>
+  </section>
+
+  <section>
+    <title>Quick start guide</title>
+
+    <orderedlist>
+      <listitem>
+        <para>After you start the application, no data file is found - wizard
+        guiding you through creating of new data file prompts you for input of
+        basic data - priest, church and holy service client. Feel free to
+        precise (or extend) the input in screens opened by menu commands
+        <menuchoice>
+            <guimenu>Definitions</guimenu>
+
+            <guimenuitem>Priests ...</guimenuitem>
+          </menuchoice> and <menuchoice>
+            <guimenu>Definitions</guimenu>
+
+            <guimenuitem>Churches ...</guimenuitem>
+          </menuchoice>. Double click the field you want to alter or click on
+        button <guibutton>Add &lt;item&gt;</guibutton> to define next
+        records.</para>
+
+        <para>After you close the definition screen, the filtering combo boxes
+        on toolbar are completed by given data. If you choose particular
+        priest/church in toolbar, they get pre-filled when you define new holy
+        service.</para>
+      </listitem>
+
+      <listitem>
+        <para>Define holy service clients (people giving the intentions) in
+        the same way. They are not necessary, but you might want to put them
+        in for your information.</para>
+      </listitem>
+
+      <listitem>
+        <para>Select a year on the toolbar for which you want to create new
+        holy service records.</para>
+      </listitem>
+
+      <listitem>
+        <para>Double click on a day cell. If the cell is not colored, there is
+        no holy service defined for that day (and priest and church) and you
+        are offered to create new holy service. Assign church, priest, time,
+        optionally client and intention to the holy service.</para>
+
+        <note>
+          <para>Calendar cell containing holy service without client
+          assignment has slightly blue background. If the client was assigned,
+          background turns in more saturated tone. See <xref
+          linkend="colorCode" /></para>
+        </note>
+      </listitem>
+
+      <listitem>
+        <para>Usually you need to do some report about intentions you have
+        collected. Invoke command <menuchoice>
+            <shortcut>
+              <keycombo>
+                <keycap>Ctrl</keycap>
+
+                <keycap>P</keycap>
+              </keycombo>
+            </shortcut>
+
+            <guimenu>Print</guimenu>
+
+            <guimenuitem>Print</guimenuitem>
+          </menuchoice> and choose a time range and format of your output.
+        Output will be created based on current filter set on main overview -
+        i.e. if you have displayed only holy services for particular church,
+        in the output will be only holy services from that church, too. You
+        will put out what you see in overview.</para>
+
+        <para>Output files are located in the <envar>TEMP</envar> folder of
+        the system (usually <filename class="directory">C:\Documents and
+        Settings\&lt;username&gt;\Local Settings\Temp</filename>, <filename
+        class="directory">/tmp</filename> on UNIXes. XML format is usable for
+        printed output, for it will be displayed as regular web page in web
+        browser. CSV format can be imported in spreadsheet applications. There
+        you can pretty-print the data at your liking.</para>
+      </listitem>
+    </orderedlist>
+
+    <para>This is rough overview. For more detailed description read
+    further!</para>
+  </section>
+
+  <section>
+    <title>Feature by feature</title>
+
+    <para>Let us go a bit deeper in the feature descriptions.</para>
+
+    <section>
+      <title>Data definitions</title>
+
+      <para>The priest and church records define domain for holy service
+      filtering.</para>
+
+      <para>In the first round of holy service acquisition you will create
+      quite a number of clients, but once you establish the base of your
+      clients (which is quite stable in our parish), you begin to gain
+      benefits. When you create holy service and assign a client, you will be
+      offered a choice from intentions served already for this client - very
+      often the intentions repeat. You can choose to get around by not
+      defining client at all or define single one client for every holy
+      service, but it is not a preferred and assumed way.</para>
+
+      <para>You start to edit the data by double clicking on the table
+      cell.</para>
+
+      <para>All data are ordered by first column - if you change the first
+      column in a way that causes reordering, the row with record can wildly
+      jump to another place. This is especially annoying when you define new
+      record. For now I consider it being a feature rather than a bug.</para>
+    </section>
+
+    <section>
+      <title>Create single service</title>
+
+      <para>Double click a day cell if there is no holy service contained, new
+      one gets created. If you intend to define more holy services in one day,
+      right click on a cell and choose menu item <guimenuitem>Create new
+      service ...</guimenuitem> and define the service. Generally you can do
+      all modifications (add/edit/delete) by context menu on table cell,
+      double click runs default action - create when no service is available
+      or edit otherwise.</para>
+
+      <para>Note that holy service detail screen uses big font type. That
+      makes your cooperation with visually challenged clients easier.</para>
+
+      <para>Client selection is easy, just start to type the surname.</para>
+
+      <section id="collision">
+        <title>Holy service collision</title>
+
+        <para>In the application are considered two holy services colliding,
+        if they are defined to be served by the same priest in the same church
+        in intersecting time interval. This respects setup that more priests
+        can serve the same holy service with more intentions. Collisions are
+        checked when you create service records.</para>
+      </section>
+
+      <section>
+        <title>Service interchange</title>
+
+        <para>According to my experience the clients are prone to
+        <quote>trade</quote> with recorded holy service dates. Client coming
+        later finds out that his intended date is already occupied and tries
+        to persuade his lucky brother or sister in Christ to let him the date
+        for whatever reason.</para>
+
+        <para>If they agree on switching the dates, take one of the service
+        records, make sure that they are to be served in the same time and
+        press <guibutton>Change date</guibutton> button so as to create <link
+        linkend="collision">collision</link> deliberately. You will be offered
+        to interchange the holy services then.</para>
+      </section>
+    </section>
+
+    <section id="colorCode">
+      <title>Color code</title>
+
+      <para>Light blue cell signalizes that the day cell contains only holy
+      service records that are not assigned to any client, yet. Saturated blue
+      tone means that day contains at least one assigned holy service.</para>
+
+      <para>This color code is practical in small parishes like ours one,
+      where is usually served max. one service a day.</para>
+
+      <para>However the above mentioned blue color is just a default setting -
+      using <menuchoice>
+          <guimenu>Definition</guimenu>
+
+          <guimenuitem>Church Detail Settings...</guimenuitem>
+        </menuchoice> you can select the church and assign own color to the
+      holy services served in the church. Still holds that assigned services
+      are drawn in more saturated color than the not assigned ones. When
+      church selection on the main toolbar is set to <guilabel>All
+      churches</guilabel> and there are multiple services for one day, the
+      cell background becomes striped to give an overview.</para>
+    </section>
+
+    <section>
+      <title>Progress bar at month name label</title>
+
+      <para>This progress bar shows percentage of holy services assigned to
+      clients in given month. The rationale for this indicator is that our
+      priest insists on having some reserve holy service in every
+      month.</para>
+
+      <para>I know that we will have 3 holy services a week. I generate them
+      with holy service generator for our church and priest, not assigning a
+      client. Client comes and I tell him, that slightly blue cells are
+      available - he chooses one, I assign him to a service, write down
+      intention and <quote>free space</quote> indicator is updated.</para>
+
+      <para>Kind of overview, if you work this way - generating of unassigned
+      services in advance and populating them on client demand.</para>
+    </section>
+
+    <section>
+      <title>View filtering</title>
+
+      <para>The first and main purpose of filter conditions is to query the
+      data flexibly. Another effect of filter settings is that filter being
+      set to particular church and/or priest causes the church/and priest to
+      be preselected when you create a new holy service.</para>
+
+      <para>Naturally, when you define holy service not passing a filter
+      (filter set to church <quote>A</quote> and new holy service assigned to
+      church <quote>B</quote>), on the main screen stays no track after the
+      new defined record - it does not fit to current filter! Set filter on
+      church <quote>B</quote> and you will see it again.</para>
+
+      <para>Last selected filter settings and displayed year is remembered in
+      system registry (Windows) or configuration file (Unix) - it will be
+      restored on next program start.</para>
+    </section>
+
+    <section id="generator">
+      <title>Holy service generator</title>
+
+      <para>I (and my clients, too) like to see all opportunities for having
+      the holy service - in our village we have holy service every Monday,
+      Friday and Sunday (for instance). Behind this rough layout is are finer
+      nuances - every first Friday in month is served holy service for
+      children in families, every third Sunday is in our church served service
+      for all members of parish (this intentions rotates among all three
+      parish churches).</para>
+
+      <para>That is the reason for first two modes of generator - first one
+      defines holy services in regular time spans - every Monday (every 1st
+      Monday to express this in generator options) or every third Sunday as
+      for the example. Basically I have two options how to setup the
+      Sundays:</para>
+
+      <orderedlist>
+        <listitem>
+          <para>I generate unassigned holy service for every Sunday in year
+          and in second run I will choose to generate every third Sunday from
+          certain date holy service (optionally) assigned to client <quote>all
+          people</quote> with intention <quote>for all people in
+          parish</quote> <emphasis>REPLACING</emphasis> colliding
+          services.</para>
+        </listitem>
+
+        <listitem>
+          <para>Or I generate every third Sunday the proper holy service with
+          the intention and add the free holy services - now I will ask for
+          creation of holy service for all Sundays
+          <emphasis>SKIPPING</emphasis> the colliding services.</para>
+        </listitem>
+      </orderedlist>
+
+      <para>The other options of generator is useful for the other task -
+      repeating of services served every first Friday, second Tuesday or
+      whatever n-th weekday in month, basically one day in month.</para>
+
+      <para>Other option is to set usual service order in <menuchoice>
+          <guimenu>Definition</guimenu>
+
+          <guimenuitem>Church Detail Settings...</guimenuitem>
+        </menuchoice> and use the predefined settings in the generator. All
+      approaches can be combined.</para>
+
+      <para>Press the button <guibutton>Generate</guibutton> once you are
+      satisfied with the options.</para>
+
+      <warning>
+        <para>As with all generators, you ought to be careful - in a few
+        seconds you could overwrite your precious hand written records.</para>
+
+        <para>I recommend to populate new year with generator and add the
+        details manually after all generating is over.</para>
+      </warning>
+    </section>
+
+    <section>
+      <title>Output</title>
+
+      <para>All visible (passed through the current filter) holy services can
+      be directly printed on the printer or exported to <abbrev>HTML</abbrev>
+      (Web page), <abbrev>PDF</abbrev> (Adobe Acrobat), <abbrev>ODF</abbrev>
+      (OpenOffice format), PostScript, <abbrev>CSV</abbrev>,
+      <abbrev>iCal</abbrev> or <abbrev>XML</abbrev> format. It is also
+      possible to put data in clipboard in format acceptable by Office
+      (OpenOffice, MS Office) applications.</para>
+
+      <para>For all kind of output save the iCal/XML ones you can modify the
+      order and type of columns that are exported via button <guibutton>Column
+      selection...</guibutton> in print dialog. By dragging the columns
+      between visible and hidden columns table you will arrange the printout.
+      The layout is persisted in the system settings, it is not transferred
+      with the data file - that means on other computer you get the default
+      column arrangement..</para>
+
+      <para>If you would like to modify the report, I recommend you to do
+      <abbrev>HTML</abbrev> export and modify it according to own taste. Many
+      editor support visual modification of this web page format today. The
+      document is immediately ready to be published on the web. Also
+      <abbrev>PDF</abbrev> is often found on the web, but is not that easily
+      editable.</para>
+
+      <para>You can also opt to do after-export modification in the
+      <abbrev>CSV</abbrev> format (I use conditional formatting of the table
+      to emphasize Sunday services in the list). <abbrev>CSV</abbrev> is
+      useful to be associated with spreadsheet application, <application
+      class="software">OpenOffice Calculator</application> or <application
+      class="software">MS Excel</application> work just fine.
+      <abbrev>CSV</abbrev> is deliberately encoded in LOCAL code page - some
+      popular applications still tend to have problem with
+      <abbrev>UTF-8</abbrev> encoding. As a separator is used semicolon
+      <constant>;</constant> character, since comma is very common in
+      intention texts.</para>
+
+      <para><abbrev>iCal</abbrev> format is accepted by wide selection of time
+      organizer/calendar applications - let us name GoogleCalendar web
+      service, IBM LotusNotes, Microsoft Outlook, KOrganizer ... They have a
+      function to import calendar file with holy services that you just
+      exported.</para>
+
+      <para><abbrev>XML</abbrev> export contains all available information
+      about holy services - it can be converted into web page by
+      transformation template <filename>defaultReport.xslt</filename> in
+      program folder. If you have some computer skills, you can easily edit
+      the <filename>xslt</filename> file (looking into export file for tag
+      name) to adapt the web browser page according to your desire.</para>
+
+      <para>It is advantageous to have assigned the <abbrev>XML</abbrev> files
+      to web browser capable of <abbrev>XSLT</abbrev> transformation
+      (<application>Mozilla</application>, <application>Safari</application>,
+      <application>Opera</application>, <abbrev>MSIE</abbrev>) - program tries
+      to open the exported file with associated application after the export
+      is finished. But when you have the possibility to output directly web
+      page format, this option is more for experts.</para>
+    </section>
+
+    <section>
+      <title>Auto-save</title>
+
+      <para>All data are automatically saved when you close the
+      application.</para>
+
+      <para>Force the saving by issuing command <menuchoice>
+          <guimenu>File</guimenu>
+
+          <guimenuitem>Save all</guimenuitem>
+        </menuchoice></para>
+    </section>
+
+    <section>
+      <title>Local holidays definition</title>
+
+      <para>Holidays valid for given day are visible in date cell tooltip.
+      Additionally to general holidays that are always visible (Christmas and
+      Eastern related holidays), you can define you own local holidays
+      according to own taste in respective screen <menuchoice>
+          <guimenu>Definitions</guimenu>
+
+          <guimenuitem>Holidays...</guimenuitem>
+        </menuchoice> .</para>
+
+      <para>Holiday definition are read from <filename>&lt;installation
+      folder&gt;/holidays</filename> folder for your language - see
+      <filename>cs_CZ.txt</filename> as example - UTF-8 encoding is expected,
+      if you decide for raw file modification.</para>
+    </section>
+  </section>
+
+  <section>
+    <title>Files in installation folder</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>HolyServices.exe</term>
+
+        <listitem>
+          <para>The application self, this file has to be run in order to use
+          the application.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>holidays/*.txt</term>
+
+        <listitem>
+          <para>Text files keeping language (culturally) specific holidays.
+          According to displayed language the holiday definition is loaded and
+          displayed in the calendar cell tooltip. For example file
+          <filename>holidays/cs_CZ.txt</filename> holds definitions for Czech
+          language. You can freely add your own entries, just use
+          <abbrev>UTF-8</abbrev> encoding.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>defaultReport.xslt</term>
+
+        <listitem>
+          <para>Output data in format XML refer to this file in order to be
+          displayed as HTML in web browsers. Edit this file with text editor
+          if you wish to have more columns, different order of columns or
+          whatever else different inside your browser. It is always copied to
+          be at XML exported file.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>*.qm</term>
+
+        <listitem>
+          <para>User interface translations. Application is natively in
+          English language.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>*.dll</term>
+
+        <listitem>
+          <para>Runtime libraries needed for application.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>*.xml, *.csv, *.ics, *.html, *.pdf</term>
+
+        <listitem>
+          <para>These are results of output you ever done. The output files
+          are never deleted by application, you can delete them when you do
+          not need them. The filename usually starts with date time section,
+          you will see immediately, which ones are ancient ones.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>untranslated.ts</term>
+
+        <listitem>
+          <para>If you would like to have HolyServices application in your
+          language, do not hesitate and translate this file! See <xref
+          linkend="how_to_translate" />.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <section id="how_to_translate">
+      <title>How to add next language</title>
+
+      <para>In installation folder is usually file named
+      <filename>untranslated.ts</filename>. It is raw stuff for user interface
+      translation, it contains all menus, message boxes text visible in the
+      program.</para>
+
+      <para>If you want to introduce your native language to the program, open
+      this file in <abbrev>UTF-8</abbrev> or Unicode enabled editor (Windows
+      <application>Notepad</application>, <ulink
+      url="http://www.vim.org"><application>vim</application></ulink>,
+      <application>PSPad</application>) and write translation of element
+      <sgmltag class="element">source</sgmltag> between tags <sgmltag
+      class="starttag">translation</sgmltag><sgmltag
+      class="endtag">translation</sgmltag> respecting occasional translating
+      hint <sgmltag class="element">comment</sgmltag>.Make sure you store the
+      file in Unicode or UTF-8 encoding, not in your local code page.</para>
+
+      <para>Of course, if you are kind of developer and you have QT library
+      installed (can happen especially for K Desktop Environment users), use
+      <application class="software">QT Linguist</application> application to
+      translate in dedicated environment.</para>
+
+      <para>Second thing to be translated is the report transforming file
+      <filename>defaultReport.xslt</filename>. Translate the header texts
+      between <sgmltag class="element">TH</sgmltag> tags.</para>
+
+      <para>Send me the translation then and I will add it to public resources
+      <abbrev>ASAP</abbrev>. You shall be rewarded greatly! I write your name
+      into credits file, if you will not gainsay :-)</para>
+    </section>
+  </section>
+
+  <section>
+    <title>Data files</title>
+
+    <para>Data files can be created by <menuchoice>
+        <shortcut>
+          <keycombo>
+            <keycap>Ctrl</keycap>
+
+            <keycap>N</keycap>
+          </keycombo>
+        </shortcut>
+
+        <guimenu>File</guimenu>
+
+        <guimenuitem>New ...</guimenuitem>
+      </menuchoice> - the file creation wizard will guide you through the
+    process. It is possible to have more data files, although (in my opinion)
+    vast majority of users will come along with just one file containing their
+    parish.</para>
+
+    <para>More files can mean more confusion. It is recommended to have just
+    one main file, that will be always opened on application start. Unless you
+    move the data file, you can forget that you have some data file - it is
+    opened, saved automatically.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>*.holyservices</term>
+
+        <listitem>
+          <para>This file holds all data needed for run of program. Backup
+          this file regularly and you are on safe side.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>storedHolyServices.dat</term>
+
+        <listitem>
+          <para>Data file from the versions preceding 1.0.0.11. It is just
+          named differently, but that is only difference to regular data
+          files.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>*.archivedHolyServices</term>
+
+        <listitem>
+          <para>regularly archived data files</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <section>
+      <title>Auto-archivation</title>
+
+      <para>Data file is regularly archived to folder <filename
+      class="directory">archive</filename>. Every week a compressed backup
+      copy of the data is stored.</para>
+
+      <para>Hopefully you will never need to use it. But if you would, you
+      need to use function <menuchoice>
+          <guimenu>File</guimenu>
+
+          <guimenuitem>Dearchive...</guimenuitem>
+        </menuchoice> to uncompress data and write the archived file in
+      readable form, you will be prompted to open it immediately.</para>
+    </section>
+
+    <section>
+      <title>How to migrate your data to new computer</title>
+
+      <para>Install the application on the new computer and copy over the data
+      file and you can continue working with your data.</para>
+
+      <para>What is NOT transferred are settings like recently used files,
+      recently selected priest/church, column selection for export. These
+      settings reside in system registry (hidden initialization file on
+      Linux).</para>
+    </section>
+
+    <section>
+      <title>Copies of data out of sync</title>
+
+      <para>When working with multiple copies of data you can easily loose
+      track on which data is the right one. If it happens that you have
+      acquired data into two different copies of data file, having something
+      here and something there, you can use any text editor or better text
+      merging tool like <application>diff</application> or <ulink
+      url="http://winmerge.org"><application>WinMerge</application></ulink>.</para>
+    </section>
+  </section>
+
+  <section>
+    <title>Command line switches</title>
+
+    <para>There are couple of command line switches you can use to parametrize
+    the application. They can be added to the application shortcut.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>--language &lt;ISO locale abbreviation&gt;</term>
+
+        <listitem>
+          <para>forces application to run with internationalization settings
+          of given locale (for example en_US or de_DE -Germany- or cs_CZ for
+          Czech locale). In standard installation en, de, cs are
+          supported.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>--file &lt;holy services file&gt;</term>
+
+        <listitem>
+          <para>opens directly given data file</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>--help, -?</term>
+
+        <listitem>
+          <para>short overview of the parameters</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </section>
+
+  <section>
+    <title>Evolution plans</title>
+
+    <para>I am more than happy to add new language files making software
+    accessible new user group.</para>
+
+    <para>Express your wish for certain feature to me and I will consider
+    creating it. That simple it is!</para>
+  </section>
+</article>

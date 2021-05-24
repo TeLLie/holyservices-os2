@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OutputOptionsDlg</class>
+ <widget class="QDialog" name="OutputOptionsDlg">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>537</width>
+    <height>595</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Output (print) options</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout">
+     <property name="spacing">
+      <number>6</number>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>From</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDateEdit" name="fromDateEdit">
+       <property name="toolTip">
+        <string>First date to be printed</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight</set>
+       </property>
+       <property name="displayFormat">
+        <string>ddd d.M.yyyy</string>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="todayButton">
+       <property name="toolTip">
+        <string>Sets the starting day to current date (today)</string>
+       </property>
+       <property name="text">
+        <string>Today</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>to</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDateEdit" name="toDateEdit">
+       <property name="toolTip">
+        <string>Last date to be printed</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight</set>
+       </property>
+       <property name="displayFormat">
+        <string>ddd d.M.yyyy</string>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="nextWeekButton">
+       <property name="toolTip">
+        <string>Sets date range from closest Sunday to next Sunday</string>
+       </property>
+       <property name="text">
+        <string>Next week</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Client:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="ClientComboBox" name="clientCombo">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="toolTip">
+        <string>List the holy services of selected client</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Output format</string>
+     </property>
+     <layout class="QVBoxLayout">
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <property name="leftMargin">
+       <number>9</number>
+      </property>
+      <property name="topMargin">
+       <number>9</number>
+      </property>
+      <property name="rightMargin">
+       <number>9</number>
+      </property>
+      <property name="bottomMargin">
+       <number>9</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Reports with variable columns</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="columnSelectionButton">
+        <property name="toolTip">
+         <string>Do your own layout of columns that suits your needs</string>
+        </property>
+        <property name="text">
+         <string>Column selection ...</string>
+        </property>
+        <property name="icon">
+         <iconset resource="HolyServices.qrc">
+          <normaloff>:/images/frame_spreadsheet.png</normaloff>:/images/frame_spreadsheet.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>22</width>
+          <height>22</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="printerButton">
+        <property name="toolTip">
+         <string>Standard system printer</string>
+        </property>
+        <property name="text">
+         <string>Printer</string>
+        </property>
+        <property name="icon">
+         <iconset resource="HolyServices.qrc">
+          <normaloff>:/images/printer.png</normaloff>:/images/printer.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>22</width>
+          <height>22</height>
+         </size>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="htmlButton">
+        <property name="toolTip">
+         <string>Common web page format</string>
+        </property>
+        <property name="text">
+         <string>Web browser</string>
+        </property>
+        <property name="icon">
+         <iconset resource="HolyServices.qrc">
+          <normaloff>:/images/html.png</normaloff>:/images/html.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>22</width>
+          <height>22</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="pdfButton">
+        <property name="toolTip">
+         <string>Portable document format</string>
+        </property>
+        <property name="text">
+         <string>PDF (Adobe Acrobat)</string>
+        </property>
+        <property name="icon">
+         <iconset resource="HolyServices.qrc">
+          <normaloff>:/images/pdfSmall.png</normaloff>:/images/pdfSmall.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>22</width>
+          <height>22</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="csvButton">
+        <property name="toolTip">
+         <string>Export into table in spreadsheet application</string>
+        </property>
+        <property name="text">
+         <string>CSV (spreadsheext - Excel, OpenCalc application)</string>
+        </property>
+        <property name="icon">
+         <iconset resource="HolyServices.qrc">
+          <normaloff>:/images/spreadsheet.png</normaloff>:/images/spreadsheet.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>22</width>
+          <height>22</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="officeClipboardButton">
+        <property name="toolTip">
+         <string>The export can be pasted from clipboard into office application as table</string>
+        </property>
+        <property name="text">
+         <string>Clipboard as *Office table</string>
+        </property>
+        <property name="icon">
+         <iconset resource="HolyServices.qrc">
+          <normaloff>:/images/editcopy.png</normaloff>:/images/editcopy.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="openOfficeButton">
+        <property name="toolTip">
+         <string>Writes down OpenOffice Writer document</string>
+        </property>
+        <property name="text">
+         <string>OpenOffice document</string>
+        </property>
+        <property name="icon">
+         <iconset resource="HolyServices.qrc">
+          <normaloff>:/images/openOffice.png</normaloff>:/images/openOffice.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>All columns export</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="xmlButton">
+        <property name="toolTip">
+         <string>HTML export of holy services</string>
+        </property>
+        <property name="text">
+         <string>XML (web servers, web browsers)</string>
+        </property>
+        <property name="icon">
+         <iconset resource="HolyServices.qrc">
+          <normaloff>:/images/xml.png</normaloff>:/images/xml.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>30</width>
+          <height>22</height>
+         </size>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="iCalButton">
+        <property name="toolTip">
+         <string>widely accepted calendar data exchange format (*.ics)</string>
+        </property>
+        <property name="text">
+         <string>iCal format (calendar format - Outlook, KOrganizer)</string>
+        </property>
+        <property name="icon">
+         <iconset resource="HolyServices.qrc">
+          <normaloff>:/images/about.png</normaloff>:/images/about.png</iconset>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>21</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Output contents</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QRadioButton" name="justServicesButton">
+        <property name="text">
+         <string>just masses</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="includeBlankButton">
+        <property name="toolTip">
+         <string>Add blank lines for dates when is no holy mass planned</string>
+        </property>
+        <property name="text">
+         <string>include blank dates</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ClientComboBox</class>
+   <extends>QComboBox</extends>
+   <header>ClientComboBox.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>fromDateEdit</tabstop>
+  <tabstop>todayButton</tabstop>
+  <tabstop>toDateEdit</tabstop>
+  <tabstop>nextWeekButton</tabstop>
+  <tabstop>clientCombo</tabstop>
+  <tabstop>columnSelectionButton</tabstop>
+  <tabstop>printerButton</tabstop>
+  <tabstop>htmlButton</tabstop>
+  <tabstop>pdfButton</tabstop>
+  <tabstop>csvButton</tabstop>
+  <tabstop>officeClipboardButton</tabstop>
+  <tabstop>openOfficeButton</tabstop>
+  <tabstop>xmlButton</tabstop>
+  <tabstop>iCalButton</tabstop>
+ </tabstops>
+ <resources>
+  <include location="HolyServices.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>OutputOptionsDlg</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

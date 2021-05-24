@@ -1,0 +1,176 @@
+1.0.0.38
+        - import of fixed format CSV intentions
+        - removed menu for outdated web locator service
+        - option to use year quartal view
+1.0.0.37
+        - NULL characters in intention text did problems in OpenOffice export with older libraries (Ubuntu 18)
+1.0.0.36
+        - menu bar year could not be set past 2020, fixed
+        - warn the user on concurrent writing access to a file and prevent silent data loss
+        - added output column "mass stipend"
+        - change of time constraint, stipend did not trigger service saving, fixed
+1.0.0.35
+        - fixed a GoogleCalendar synchronization bug on recently introduced "intention is filled" occupation mode
+        - fixed bug on synchronization where from more new GCal entries was displayed and imported just one
+1.0.0.34
+        - service assignment criteria can be changed from "client is assigned" to "intention is filled"
+        - changed service assignment is reflected in GoogleCal synchronization
+        - changed client selection in service detail
+        - show unoccupied color strip even if there is occupied service on given date (light and saturated strips in cell background)
+        - file/open menu works again
+1.0.0.33
+        - fixed Windows printing
+        - restore SSL capability (https GoogleCalendar access) on clean Windows installations
+1.0.0.32
+        - fixed crash on print with empty column list
+        - modification during client GUI assignment are transferred on web
+	immediately
+1.0.0.31
+        - fix automatic GoogleCalendar synchronization
+1.0.0.30
+        - name of unresolved client from the GoogleCalendar shown in forms
+        - use standard web browser of client instead of embedded WebKit
+1.0.0.29
+        - added option to semi-automatic synchronization
+        - when client canot be resolved in web->PC direction, it can be selected in GUI
+        - web->PC direction can create the service on the local side
+        - newclient can be created directly in service detail dialog	
+1.0.0.28
+        - fixed GoogleCalc synchronization error leading to web calendar
+	duplicities
+1.0.0.27
+        - exports can include blank lines for day where is no holy mass planned
+        - more detailed differences display in GoogleCalendar synchronization process
+1.0.0.26
+        - synchronization of mass data with GoogleCalendar(s) enabling Android mobile modifications and in the terrain intention gathering
+        - export can use new column "Short date"
+        - export dialog can use "Next week" as date range 
+1.0.0.25
+        - move sets of services to different date/time
+        - program handles well opening of associated data files (after clicking data file it is also opened)
+        - sample of XML output customization that produces formatted HTML table
+        - Delete key deletes the calendar entry
+        - migration to recent version of user interface toolkit
+1.0.0.24
+        - build and installation prepared for split installation folders
+        - RPM and Debian installation packages
+        - holiday definition from different sources stack up correctly
+        - migration to recent version of user interface toolkit
+1.0.0.23
+        - it is possible to export holiday column
+	- church abbreviation field added into church definition and reports
+        - option to exclude intention texts from web locator export
+        - troublesome selection of clients beginning with the same letter
+	  fixed
+1.0.0.22
+        - bug that prevented saving of more than one object modification fixed         
+        - do not archive backup that often
+1.0.0.21
+        - export for web service locatechurch.appspot.com
+        - link to registration pages
+1.0.0.20
+        - generator run undo/redo
+        - added flag for relaxed time assignment
+        - added recording of received money and its summarization
+        - added "Add holiday" ability to calendar cell context menu
+        - removed distracting year season coloring on month labels
+1.0.0.19
+        - italian and german translation revised
+        - added experimental spain translation
+1.0.0.18
+        - incremental client search in detail screen
+        - smart focus in service detail screen
+        - czech holidays definition file until 2030
+        - updated documentation
+        - user interface for local holiday management
+1.0.0.17
+        - experimental machine italian and portuguese translation
+        - up to 3 holy services on Sunday in weekly church template
+1.0.0.16
+        - improved tooltip over multiple services shows all services 
+          in a cell as bulleted list
+        - not-yet translatable UI text made translatable
+        - common christian holidays (Christmas, Eastern) visible in a cell
+	tooltip
+        - support for user-defined holidays and other date related events
+        - client contains new field called "contact"
+          for phone/email/whatever contact information (file format extended)
+        - in service detail service history can be viewed
+        - historical intentions of a client now shows record over entire
+	client history
+        - export into clipboard in *Office application compatible format
+        - export into OpenOffice document
+	- fixed bug causing that All churches/All priests selection 
+          was not saved	between program runs
+        - archivation of data file every week, dearchivation command in File
+	menu
+1.0.0.15
+        - each church can have its own color that are visible in 
+          calendar cells, so that color code highlighting possibilities 
+          are extended 
+        - new editor of churches - you can define standard
+          week layout for services
+        - holy service generator can use the church schema
+1.0.0.14
+        - filtering by particular client can be done on output (print)
+        - added export to iCal format (calendar applications exchange)
+        - preview of data in column configuration dialog
+1.0.0.13
+        - fixed bug that client name and address is empty in reports
+        - added Slovak translation
+        - updated english and czech help file and PDF documentation
+1.0.0.12
+        - fixed possible crash on switching the data files
+        - new file wizard running on first run of program
+        - native print enabled
+        - HTML, PDF, PostScript export
+        - national settings aware date format in exports
+        - configurable columns on export
+        - splash screen
+        - new application icon
+1.0.0.11
+        - data file does not need to be in installation folder, what eases use
+	on Unixes and Windows administrated PCs, where the default
+	installation folder cannot be accessed (backward compatibility
+	handled).
+        - on export dialog the button "Today" for starting date is available
+        - about box contains references 	
+	- new command line switch --file for enforced file opening
+1.0.0.10 
+        - input validity check in service generator
+        - minor translation fixes
+1.0.0.9
+        - improved CSV export
+        - binary installkits for Linux - RPM and clickable binary installer available
+        - fixed Definitions editor showing bogus lines
+        - holy service data is checked for validity before the form is
+	accepted
+        - duplicity on input of priests/clients/churches is correctly handled
+        - moved "Clear the client assignment" button
+1.0.0.8
+        - documentation available as HTML from the Help menu
+		- improved behavior of Definitions (churches, client, piest) editor
+		- fixed english texts in Czech documentation
+		- tooltips over more UI elements
+		- command line switch -language and -? --help
+1.0.0.7 - minor bug fixing
+        - check for service length before service are generated
+1.0.0.6 - Migration to MinGW compiler for easy installation, install kit 
+          does not need admin privileges anymore
+1.0.0.5 - Windows installation kit completed by WindowInstaller installation
+        - Windows install kit demands administrator privileges and Win2k and
+	above
+1.0.0.4 - Correct deletion implemented for clients, priests and churches
+        - this changelog added to Win32 installation kit
+1.0.0.3 - Czech documentation
+	- improved client/priest/church editor table behavior - no more wild
+	jumps
+        - threaded storing of XML file
+        - better error handling and messaging
+1.0.0.2 - added German UI translation
+	- client and church list respects locale specific sorting
+	- visual enhancements (button icons)
+1.0.0.1 - fixed installation kit for Win32 to deploy runtime libraries
+properly
+	- added english documentation
+1.0.0.0 - initial release, UI in Czech and English

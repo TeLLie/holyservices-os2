@@ -1,0 +1,1 @@
+XML persistence store keeps the DOM structure in memory - small changes are saved into in-memory XML fragments (DOM nodes). On big save request all small temporary files are transferred into main save file.

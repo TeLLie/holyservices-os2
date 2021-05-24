@@ -1,0 +1,45 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/1downarrow.png</file>
+        <file>images/1leftarrow.png</file>
+        <file>images/1rightarrow.png</file>
+        <file>images/1uparrow.png</file>
+        <file>images/about.png</file>
+        <file>images/add.png</file>
+        <file>images/button_cancel.png</file>
+        <file>images/button_ok.png</file>
+        <file>images/clear_left.png</file>
+        <file>images/delete.png</file>
+        <file>images/edit.png</file>
+        <file>images/exec.png</file>
+        <file>images/exit.png</file>
+        <file>images/fileexport.png</file>
+        <file>images/filefind.png</file>
+        <file>images/filenew.png</file>
+        <file>images/fileopen.png</file>
+        <file>images/frame_spreadsheet.png</file>
+        <file>images/help.png</file>
+        <file>images/html.png</file>
+        <file>images/holy_services16.png</file>
+        <file>images/holy_services32.png</file>
+        <file>images/holy_services_splash.png</file>
+        <file>images/changeDate.png</file>
+        <file>images/info.png</file>
+        <file>images/kontact_date.png</file>
+        <file>images/leave.png</file>
+        <file>images/pdfSmall.png</file>
+        <file>images/pencil.png</file>
+        <file>images/postScript.png</file>
+        <file>images/printer.png</file>
+        <file>images/save_all.png</file>
+        <file>images/spreadsheet.png</file>
+        <file>images/xml.png</file>
+        <file>images/editcopy.png</file>
+        <file>images/openOffice.png</file>
+        <file>images/filesave.png</file>
+        <file>images/undo.png</file>
+        <file>images/redo.png</file>
+        <file>images/ledlightblue.png</file>
+        <file>images/math_sum.png</file>
+    </qresource>
+</RCC>

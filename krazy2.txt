@@ -1,0 +1,484 @@
+krazy2 Analysis
+
+Checkers Run = 41
+Files Processed = 174
+Total Issues = 647 ...as of January 23 2010 22:19:51 CET
+
+==>For File Type c++<==
+1. Check for TRUE and FALSE macros [captruefalse]... Ok!
+
+2. Check for methods that return 'const' refs in public classes [constref]... Ok!
+
+3. Check for an acceptable copyright [copyright]... 148 issues found
+        ./precompiled/precompiledHeaders.h: missing tags: copyright  (1)
+        ./data/IHistoryData.h: missing tags: copyright  (1)             
+        ./data/PriestIndexing.cpp: missing tags: copyright  (1)         
+        ./data/HolyServiceIndexing.h: missing tags: copyright  (1)      
+        ./data/Client.h: missing tags: copyright  (1)                   
+        ./data/Person.cpp: missing tags: copyright  (1)                 
+        ./data/ServiceGenerator.cpp: missing tags: copyright  (1)       
+        ./data/ChurchFilter.cpp: missing tags: copyright  (1)           
+        ./data/ClientModel.h: missing tags: copyright  (1)              
+        ./data/ChurchIndexing.h: missing tags: copyright  (1)           
+        ./data/PriestModel.h: missing tags: copyright  (1)              
+        ./data/Client.cpp: missing tags: copyright  (1)                 
+        ./data/ClientFilter.h: missing tags: copyright  (1)             
+        ./data/ImportCsv.cpp: missing tags: copyright  (1)              
+        ./data/Church.cpp: missing tags: copyright  (1)                 
+        ./data/HolyService.cpp: missing tags: copyright  (1)            
+        ./data/PriestModel.cpp: missing tags: copyright  (1)            
+        ./data/Identifiable.h: missing tags: copyright  (1)             
+        ./data/PriestIndexing.h: missing tags: copyright  (1)           
+        ./data/functors.h: missing tags: copyright  (1)                 
+        ./data/ClientFilter.cpp: missing tags: copyright  (1)           
+        ./data/ChurchModel.h: missing tags: copyright  (1)              
+        ./data/ClientModel.cpp: missing tags: copyright  (1)            
+        ./data/HsTypedefs.h: missing tags: copyright  (1)               
+        ./data/AndFilter.h: missing tags: copyright  (1)                
+        ./data/ClientIndexing.cpp: missing tags: copyright  (1)         
+        ./data/HolyServiceIndexing.cpp: missing tags: copyright  (1)    
+        ./data/ChurchIndexing.cpp: missing tags: copyright  (1)         
+        ./data/AndFilter.cpp: missing tags: copyright  (1)              
+        ./data/IModificationAware.h: missing tags: copyright  (1)       
+        ./data/Person.h: missing tags: copyright  (1)                   
+        ./data/ImportCsv.h: missing tags: copyright  (1)                
+        ./data/ClientIndexing.h: missing tags: copyright  (1)           
+        ./data/Priest.h: missing tags: copyright  (1)                   
+        ./data/PriestFilter.h: missing tags: copyright  (1)             
+        ./data/Identifiable.cpp: missing tags: copyright  (1)           
+        ./data/Priest.cpp: missing tags: copyright  (1)                 
+        ./data/Church.h: missing tags: copyright  (1)                   
+        ./data/ServiceGenerator.h: missing tags: copyright  (1)         
+        ./data/HolyService.h: missing tags: copyright  (1)              
+        ./data/PriestFilter.cpp: missing tags: copyright  (1)           
+        ./data/IServiceFilter.h: missing tags: copyright  (1)           
+        ./data/ChurchModel.cpp: missing tags: copyright  (1)            
+        ./data/BasicModificationAware.cpp: missing tags: copyright  (1) 
+        ./data/IIdentifiable.h: missing tags: copyright  (1)            
+        ./data/AssignedFilter.cpp: missing tags: copyright  (1)         
+        ./data/AssignedFilter.h: missing tags: copyright  (1)           
+        ./data/BasicModificationAware.h: missing tags: copyright  (1)   
+        ./data/ChurchFilter.h: missing tags: copyright  (1)             
+        ./holidays/CzechHolidays.h: missing tags: copyright  (1)        
+        ./holidays/IHolidays.h: missing tags: copyright  (1)            
+        ./holidays/CzechHolidays.cpp: missing tags: copyright  (1)      
+        ./persistence/IXmlTransformer.h: missing tags: copyright  (1)   
+        ./persistence/IPersistentStore.h: missing tags: copyright  (1)  
+        ./persistence/CurrentPersistentStore.h: missing tags: copyright  (1)
+        ./persistence/PersistentStoreFactory.h: missing tags: copyright  (1)
+        ./persistence/IClassStorage.h: missing tags: copyright  (1)         
+        ./persistence/CurrentPersistentStore.cpp: missing tags: copyright  (1)
+        ./persistence/PersistentStoreFactory.cpp: missing tags: copyright  (1)
+        ./persistence/BasicClassStorage.h: missing tags: copyright  (1)       
+        ./persistence/xml/XmlPersistentStore.h: missing tags: copyright  (1)  
+        ./persistence/xml/DomSaverThread.h: missing tags: copyright  (1)      
+        ./persistence/xml/PersonStorage.cpp: missing tags: copyright  (1)     
+        ./persistence/xml/DomStorageQueue.h: missing tags: copyright  (1)     
+        ./persistence/xml/BasicXmlTransformer.h: missing tags: copyright  (1) 
+        ./persistence/xml/ChurchStorage.cpp: missing tags: copyright  (1)     
+        ./persistence/xml/ChurchStorage.h: missing tags: copyright  (1)       
+        ./persistence/xml/ClientStorage.cpp: missing tags: copyright  (1)     
+        ./persistence/xml/PriestStorage.cpp: missing tags: copyright  (1)     
+        ./persistence/xml/DomSaverThread.cpp: missing tags: copyright  (1)    
+        ./persistence/xml/HolyServiceStorage.h: missing tags: copyright  (1)  
+        ./persistence/xml/HolyServiceStorage.cpp: missing tags: copyright  (1)
+        ./persistence/xml/XmlPersistentStore.cpp: missing tags: copyright  (1)
+        ./persistence/xml/BasicXmlTransformer.cpp: missing tags: copyright  (1)
+        ./persistence/xml/DomStorageQueue.cpp: missing tags: copyright  (1)    
+        ./persistence/xml/ClientStorage.h: missing tags: copyright  (1)        
+        ./persistence/xml/PriestStorage.h: missing tags: copyright  (1)        
+        ./persistence/xml/PersonStorage.h: missing tags: copyright  (1)        
+        ./gui/ColumnDescriptionsModel.cpp: missing tags: copyright  (1)        
+        ./gui/HolyServiceSelection.cpp: missing tags: copyright  (1)           
+        ./gui/WaitingCursor.cpp: missing tags: copyright  (1)                  
+        ./gui/PriestComboBox.cpp: missing tags: copyright  (1)                 
+        ./gui/FocusReportingEdit.h: missing tags: copyright  (1)               
+        ./gui/HolyServiceApp.cpp: missing tags: copyright  (1)                 
+        ./gui/ServiceCalendarWidget.h: missing tags: copyright  (1)            
+        ./gui/FocusReportingEdit.cpp: missing tags: copyright  (1)             
+        ./gui/ColumnDescriptionsModel.h: missing tags: copyright  (1)          
+        ./gui/AboutDlg.cpp: missing tags: copyright  (1)                       
+        ./gui/ClientOverview.h: missing tags: copyright  (1)                   
+        ./gui/NewFileWizard.cpp: missing tags: copyright  (1)                  
+        ./gui/SelectFromListDlg.cpp: missing tags: copyright  (1)              
+        ./gui/ServiceDetailDlg.h: missing tags: copyright  (1)                 
+        ./gui/ChurchWeekDayWidget.cpp: missing tags: copyright  (1)            
+        ./gui/CalendarDelegate.cpp: missing tags: copyright  (1)               
+        ./gui/HolyServicesMF.h: missing tags: copyright  (1)                   
+        ./gui/ClientOverview.cpp: missing tags: copyright  (1)                 
+        ./gui/ServiceDetailDlg.cpp: missing tags: copyright  (1)               
+        ./gui/IdComboBox.h: missing tags: copyright  (1)                       
+        ./gui/ChurchEditor.h: missing tags: copyright  (1)                     
+        ./gui/OutputOptionsDlg.cpp: missing tags: copyright  (1)               
+        ./gui/ReportColumnConfigurationDlg.h: missing tags: copyright  (1)     
+        ./gui/ServiceMonthWidget.h: missing tags: copyright  (1)               
+        ./gui/NewFileWizard.h: missing tags: copyright  (1)                    
+        ./gui/UpdateGuard.h: missing tags: copyright  (1)                      
+        ./gui/ChurchEditor.cpp: missing tags: copyright  (1)                   
+        ./gui/ServiceGeneratorDlg.h: missing tags: copyright  (1)              
+        ./gui/DateInputDlg.h: missing tags: copyright  (1)                     
+        ./gui/ServiceGeneratorDlg.cpp: missing tags: copyright  (1)            
+        ./gui/HolyServicesMF.cpp: missing tags: copyright  (1)                 
+        ./gui/OutputOptionsDlg.h: missing tags: copyright  (1)                 
+        ./gui/ReportColumnConfigurationDlg.cpp: missing tags: copyright  (1)   
+        ./gui/ButtonDecorator.cpp: missing tags: copyright  (1)                
+        ./gui/ServiceMonthWidget.cpp: missing tags: copyright  (1)             
+        ./gui/IdComboBox.cpp: missing tags: copyright  (1)                     
+        ./gui/main.cpp: missing tags: copyright  (1)                           
+        ./gui/ChurchWeekDayWidget.h: missing tags: copyright  (1)              
+        ./gui/UpdateGuard.cpp: missing tags: copyright  (1)                    
+        ./gui/SelectFromListDlg.h: missing tags: copyright  (1)                
+        ./gui/HolyServiceSelection.h: missing tags: copyright  (1)             
+        ./gui/CalendarDelegate.h: missing tags: copyright  (1)                 
+        ./gui/ButtonDecorator.h: missing tags: copyright  (1)                  
+        ./gui/WaitingCursor.h: missing tags: copyright  (1)                    
+        ./gui/DateInputDlg.cpp: missing tags: copyright  (1)                   
+        ./gui/PriestComboBox.h: missing tags: copyright  (1)                   
+        ./gui/HolyServiceApp.h: missing tags: copyright  (1)                   
+        ./gui/AboutDlg.h: missing tags: copyright  (1)                         
+        ./gui/ServiceCalendarWidget.cpp: missing tags: copyright  (1)          
+        ./common/HistoryData.cpp: missing tags: copyright  (1)                 
+        ./common/IdTag.h: missing tags: copyright  (1)                         
+        ./common/GenericIndexing.h: missing tags: copyright  (1)               
+        ./common/HistoryData.h: missing tags: copyright  (1)                   
+        ./common/IdTag.cpp: missing tags: copyright  (1)                       
+        ./preferences/UserSettings.h: missing tags: copyright  (1)             
+        ./preferences/UserSettings.cpp: missing tags: copyright  (1)           
+        ./output/CsvExporter.h: missing tags: copyright  (1)                   
+        ./output/HtmlExporter.cpp: missing tags: copyright  (1)                
+        ./output/PrinterExporter.h: missing tags: copyright  (1)               
+        ./output/XmlExporter.h: missing tags: copyright  (1)                   
+        ./output/XmlExporter.cpp: missing tags: copyright  (1)                 
+        ./output/CsvExporter.cpp: missing tags: copyright  (1)                 
+        ./output/ReportColumnDescription.cpp: missing tags: copyright  (1)     
+        ./output/PrinterExporter.cpp: missing tags: copyright  (1)             
+        ./output/IExporter.h: missing tags: copyright  (1)                     
+        ./output/HtmlExporter.h: missing tags: copyright  (1)                  
+        ./output/DocumentExporter.h: missing tags: copyright  (1)              
+        ./output/ReportColumnDescription.h: missing tags: copyright  (1)       
+        ./output/DocumentExporter.cpp: missing tags: copyright  (1)            
+        ./celebrations/ICelebrations.h: missing tags: copyright  (1)           
+        All source files must contain a copyright header which identifies      
+        the copyright holder(s) together with a e-mail address that can be     
+        used to reach the copyright holder.  One copyright holder per line,    
+        with real email addresses please. For details regarding KDE's          
+        licensing policy please visit                                          
+        <http://techbase.kde.org/Policies/Licensing_Policy>.  A typical        
+        copyright looks like: "Copyright 2002,2005-2006 Joe Hacker             
+        <joe.hacker@kde.org>"                                                  
+
+4. Check for cpp macros and usage [cpp]... 3 issues found
+        ./common/HistoryData.cpp: O/S or Compiler specific macro line#14[Q_OS_WIN32],87[Q_OS_WIN32],103[Q_OS_WIN32] (3)
+        C++ source files and non-installed headers should NOT use cpp                                                  
+        conditionals that check for a certain O/S or compiler; instead use                                             
+        CMake HAVE_foo macros. We want to check for features discovered                                                
+        during CMake time rather than for a specific O/S.                                                              
+
+5. Check for code that should be considered crashy. [crashy]... 268 issues found
+        ./gui/HolyServiceSelection.cpp: line#54 (1)                             
+        ./gui/OutputOptionsDlg.cpp: line#97 (1)                                 
+        ./gui/HolyServicesMF.cpp: line#124,392,420,450,480,500,695 (7)          
+        ./gui/ServiceMonthWidget.cpp: line#172,255,291 (3)                      
+        ./output/PrinterExporter.cpp: line#34 (1)                               
+        Looks for not using QPointers when showing modal dialogs via            
+        exec(), as discussed in <http://www.kdedevelopers.org/node/3919>        
+
+6. Check single-char QString operations for efficiency [doublequote_chars]... 6 issues found
+        ./gui/NewFileWizard.cpp: line#425 (1)                                               
+        ./gui/ChurchWeekDayWidget.cpp: line#36 (1)                                          
+        ./common/HistoryData.cpp: line#82 (1)                                               
+        ./output/ReportColumnDescription.cpp: line#58,64 (2)                                
+        ./output/CalendarExporter.cpp: replace issues line#98 (1)                           
+        Adding single characters to a QString is faster if the characters                   
+        are QChars and not QStrings.  For example: QString path = oldpath +                 
+        "/" + base is better written as QString path = oldpath + '/' +                      
+        base. Same holds for arguments to QString::startsWith(),                            
+        QString::endsWith(), QString::remove(), QString::section(), and                     
+        QString::split(). Use QString::remove() instead of                                  
+        QString::replace(foo,"")                                                            
+
+7. Check for unwanted doxygen tags in major versions [doxytags]... Ok!
+
+8. Check public classes with private members or d-pointer issues [dpointer]... Ok!
+
+9. Check for QString compares to "" [emptystrcompare]... Ok!
+
+10. Check that file ends with a newline [endswithnewline]... 5 issues found
+        ./data/Church.cpp: line# 97 (1)                                    
+        ./gui/ChurchWeekDayWidget.cpp: line# 105 (1)                       
+        ./gui/CalendarModel.cpp: line# 563 (1)                             
+        ./gui/ChurchEditor.cpp: line# 196 (1)                              
+        ./gui/IdComboBox.cpp: line# 71 (1)                                 
+        Files that do not end with a newline character can cause problems. 
+        Please add a newline character to the end of the file.             
+
+11. Check for C++ ctors that should be declared 'explicit' [explicit]... Ok!
+
+12. Check for foreach loop issues [foreach]... 16 issues found
+        ./gui/ColumnDescriptionsModel.cpp: non-const ref iterator line#150,213,248 (3)
+        ./gui/ChurchEditor.cpp: non-const ref iterator line#167 (1)                   
+        ./gui/HolyServicesMF.cpp: non-const ref iterator line#933 (1)                 
+        ./gui/ReportColumnConfigurationDlg.cpp: non-const ref iterator line#43,108,113,255 (4)
+        ./preferences/UserSettings.cpp: non-const ref iterator line#95,124 (2)                
+        ./output/CsvExporter.cpp: non-const ref iterator line#42,61 (2)                       
+        ./output/DocumentExporter.cpp: non-const ref iterator line#47,60,92 (3)               
+        When not using POD types (int, double, pointer, ...) you should use                   
+        const & for your foreach variables. There are two reasons for this:                   
+        1) Prevents you from the mistake of writing foreach loops that                        
+        modify the list, that is 'foreach(Foo f, list) f.a = f.b = f.c =                      
+        0;' compiles but does not modify the contents of list 2) Saves a                      
+        copy constructor call for each of the list elements                                   
+
+13. Check validity of i18n calls [i18ncheckarg]... Ok!
+
+14. Check for invalid icon names [iconnames]... Ok!
+
+15. Check for proper include directives [includes]... 25 issues found
+        ./data/HolyServiceIndexing.h: missing or improper include guard in header
+        ./data/Identifiable.h: missing or improper include guard in header       
+        ./data/HsTypedefs.h: missing or improper include guard in header         
+        ./data/IModificationAware.h: missing or improper include guard in header 
+        ./data/HolyService.h: missing or improper include guard in header        
+        ./data/IIdentifiable.h: missing or improper include guard in header      
+        ./data/BasicModificationAware.h: missing or improper include guard in header
+        ./persistence/IXmlTransformer.h: missing or improper include guard in header
+        ./persistence/IPersistentStore.h: missing or improper include guard in header
+        ./persistence/PersistentStoreFactory.h: missing or improper include guard in header
+        ./persistence/IClassStorage.h: missing or improper include guard in header         
+        ./persistence/BasicClassStorage.h: missing or improper include guard in header     
+        ./persistence/xml/XmlPersistentStore.h: missing or improper include guard in header
+        ./persistence/xml/DomStorageQueue.h: missing or improper include guard in header   
+        ./persistence/xml/BasicXmlTransformer.h: missing or improper include guard in header
+        ./persistence/xml/HolyServiceStorage.h: missing or improper include guard in header 
+        ./persistence/xml/PriestStorage.h: missing or improper include guard in header      
+        ./gui/ServiceCalendarWidget.h: missing or improper include guard in header          
+        ./gui/CalendarWidgetPrivate.h: missing or improper include guard in header          
+        ./gui/HolyServicesMF.h: missing or improper include guard in header                 
+        ./gui/ServiceMonthWidget.h: missing or improper include guard in header             
+        ./gui/WaitingCursor.h: missing or improper include guard in header                  
+        ./common/IdTag.h: missing or improper include guard in header                       
+        ./common/HistoryData.h: missing or improper include guard in header                 
+        ./celebrations/ICelebrations.h: missing or improper include guard in header         
+        Use <..> to include installed headers; <QtModule/QClass> to include                 
+        Qt headers from installed headers; cpp file should include their                    
+        own headers first (but below config.h); other rules apply, see                      
+        <http://techbase.kde.org/Policies/Library_Code_Policy#Getting_.23in                 
+        cludes_right>. Use include guards in headers with appropriatedly                    
+        encoded macro names.                                                                
+
+16. Check for inline methods in public classes [inline]... Ok!
+
+17. Check for an acceptable license [license]... 86 issues found
+        ./precompiled/precompiledHeaders.h: missing license     
+        ./data/IHistoryData.h: missing license                  
+        ./data/HolyServiceIndexing.h: missing license           
+        ./data/Client.h: missing license                        
+        ./data/ClientModel.h: missing license                   
+        ./data/ChurchIndexing.h: missing license                
+        ./data/PriestModel.h: missing license                   
+        ./data/ClientFilter.h: missing license                  
+        ./data/Identifiable.h: missing license                  
+        ./data/PriestIndexing.h: missing license                
+        ./data/functors.h: missing license                      
+        ./data/ChurchModel.h: missing license                   
+        ./data/HsTypedefs.h: missing license                    
+        ./data/AndFilter.h: missing license                     
+        ./data/IModificationAware.h: missing license            
+        ./data/Person.h: missing license                        
+        ./data/ImportCsv.h: missing license                     
+        ./data/ClientIndexing.h: missing license                
+        ./data/Priest.h: missing license                        
+        ./data/PriestFilter.h: missing license                  
+        ./data/Church.h: missing license                        
+        ./data/ServiceGenerator.h: missing license              
+        ./data/HolyService.h: missing license                   
+        ./data/IServiceFilter.h: missing license                
+        ./data/IIdentifiable.h: missing license                 
+        ./data/AssignedFilter.h: missing license                
+        ./data/BasicModificationAware.h: missing license        
+        ./data/ChurchFilter.h: missing license                  
+        ./holidays/CzechHolidays.h: missing license             
+        ./holidays/IHolidays.h: missing license                 
+        ./persistence/IXmlTransformer.h: missing license        
+        ./persistence/IPersistentStore.h: missing license       
+        ./persistence/CurrentPersistentStore.h: missing license 
+        ./persistence/PersistentStoreFactory.h: missing license 
+        ./persistence/IClassStorage.h: missing license          
+        ./persistence/BasicClassStorage.h: missing license      
+        ./persistence/xml/XmlPersistentStore.h: missing license 
+        ./persistence/xml/DomSaverThread.h: missing license     
+        ./persistence/xml/DomStorageQueue.h: missing license    
+        ./persistence/xml/BasicXmlTransformer.h: missing license
+        ./persistence/xml/ChurchStorage.h: missing license      
+        ./persistence/xml/HolyServiceStorage.h: missing license 
+        ./persistence/xml/ClientStorage.h: missing license      
+        ./persistence/xml/PriestStorage.h: missing license      
+        ./persistence/xml/PersonStorage.h: missing license      
+        ./gui/PriestComboBox.cpp: missing license               
+        ./gui/FocusReportingEdit.h: missing license             
+        ./gui/ServiceCalendarWidget.h: missing license          
+        ./gui/ColumnDescriptionsModel.h: missing license        
+        ./gui/ClientOverview.h: missing license                 
+        ./gui/ClientComboBox.h: missing license                 
+        ./gui/ServiceDetailDlg.h: missing license               
+        ./gui/ChurchWeekDayWidget.cpp: missing license          
+        ./gui/HolyServicesMF.h: missing license                 
+        ./gui/IdComboBox.h: missing license                     
+        ./gui/ChurchEditor.h: missing license                   
+        ./gui/ReportColumnConfigurationDlg.h: missing license   
+        ./gui/ServiceMonthWidget.h: missing license             
+        ./gui/NewFileWizard.h: missing license                  
+        ./gui/UpdateGuard.h: missing license                    
+        ./gui/ServiceGeneratorDlg.h: missing license            
+        ./gui/DateInputDlg.h: missing license                   
+        ./gui/OutputOptionsDlg.h: missing license               
+        ./gui/ChurchWeekDayWidget.h: missing license            
+        ./gui/UpdateGuard.cpp: missing license                  
+        ./gui/SelectFromListDlg.h: missing license              
+        ./gui/HolyServiceSelection.h: missing license           
+        ./gui/CalendarDelegate.h: missing license               
+        ./gui/ButtonDecorator.h: missing license                
+        ./gui/WaitingCursor.h: missing license                  
+        ./gui/PriestComboBox.h: missing license                 
+        ./gui/HolyServiceApp.h: missing license                 
+        ./gui/AboutDlg.h: missing license                       
+        ./common/IdTag.h: missing license                       
+        ./common/GenericIndexing.h: missing license             
+        ./common/HistoryData.h: missing license                 
+        ./preferences/UserSettings.h: missing license           
+        ./output/CsvExporter.h: missing license                 
+        ./output/PrinterExporter.h: missing license             
+        ./output/CalendarExporter.h: missing license            
+        ./output/XmlExporter.h: missing license                 
+        ./output/IExporter.h: missing license                   
+        ./output/HtmlExporter.h: missing license                
+        ./output/DocumentExporter.h: missing license            
+        ./output/ReportColumnDescription.h: missing license     
+        ./celebrations/ICelebrations.h: missing license         
+        Each source file must contain a license or a reference to a license
+        which states under which terms the software may be used, modified  
+        and redistributed.  For details regarding KDE's licensing policy   
+        please visit <http://techbase.kde.org/Policies/Licensing_Policy>.  
+
+18. Check for assignments to QString::null [nullstrassign]... Ok!
+
+19. Check for compares to QString::null or QString() [nullstrcompare]... Ok!
+
+20. Check for C++ operators that should be 'const' [operators]... Ok!
+
+21. Check for inappropriate pass-by-value function args [passbyvalue]... Ok!
+
+22. Check for postfix usage of ++ and -- [postfixop]... Ok!
+
+23. Check for dangerous or inefficient QByteArray usage [qbytearray]... Ok!
+
+24. Check for Qt classes that should not be used [qclasses]... 55 issues found
+        ./persistence/xml/DomStorageQueue.cpp: QMessageBox[KMessageBox],QMessageBox[KMessageBox] (2)
+        ./gui/HolyServiceSelection.cpp: QMessageBox[KMessageBox] (1)                                
+        ./gui/FocusReportingEdit.h: QTextEdit[KTextEdit] (1)                                        
+        ./gui/HolyServiceApp.cpp: QMessageBox[KMessageBox] (1)                                      
+        ./gui/NewFileWizard.cpp: QLineEdit[KLineEdit],QLineEdit[KLineEdit],QLineEdit[KLineEdit],QLineEdit[KLineEdit],QLineEdit[KLineEdit],QLineEdit[KLineEdit],QTextEdit[KTextEdit],QLineEdit[KLineEdit],QLineEdit[KLineEdit],QFileDialog[KFileDialog] (10)                                               
+        ./gui/HolyServicesMF.h: QComboBox[KComboBox],QComboBox[KComboBox] (2)                                                                        
+        ./gui/ClientOverview.cpp: QMessageBox[KMessageBox],QMessageBox[KMessageBox],QMessageBox[KMessageBox] (3)                                     
+        ./gui/ServiceDetailDlg.cpp: QMessageBox[KMessageBox],QMessageBox[KMessageBox] (2)                                                            
+        ./gui/IdComboBox.h: QComboBox[KComboBox] (1)                                                                                                 
+        ./gui/NewFileWizard.h: QLineEdit[KLineEdit],QLineEdit[KLineEdit] (2)                                                                         
+        ./gui/ChurchEditor.cpp: QColorDialog[KColorDialog] (1)                                                                                       
+        ./gui/ServiceGeneratorDlg.cpp: QMessageBox[KMessageBox],QMessageBox[KMessageBox] (2)                                                         
+        ./gui/HolyServicesMF.cpp: QMessageBox[KMessageBox],QFileDialog[KFileDialog],QMessageBox[KMessageBox],QMessageBox[KMessageBox],QMessageBox[KMessageBox],QMessageBox[KMessageBox],QMessageBox[KMessageBox],QComboBox[KComboBox],QComboBox[KComboBox],QUrl[KUrl],QUrl[KUrl],QMessageBox[KMessageBox],QTextBrowser[KTextBrowser],QUrl[KUrl],QMessageBox[KMessageBox],QMessageBox[KMessageBox],QMessageBox[KMessageBox],QMessageBox[KMessageBox],QMessageBox[KMessageBox] (19)                                                                                                                                   
+        ./gui/ReportColumnConfigurationDlg.cpp: QMessageBox[KMessageBox],QMessageBox[KMessageBox] (2)                                                
+        ./gui/ServiceMonthWidget.cpp: QMessageBox[KMessageBox],QMessageBox[KMessageBox],QMessageBox[KMessageBox] (3)                                 
+        ./gui/main.cpp: QMessageBox[KMessageBox],QMessageBox[KMessageBox],QMessageBox[KMessageBox] (3)                                               
+        Don't use Qt 4 classes that are deprecated. Additionally make sure                                                                           
+        to use the KDE version of some Qt GUI elements to provide a                                                                                  
+        consistent look and feel for the KDE desktop. The KDE classes are                                                                            
+        not just adding functionalities to the Qt base class and are mostly                                                                          
+        not even based on the Qt class.                                                                                                              
+        <http://techbase.kde.org/Policies/API_to_Avoid> *Please* *refer*                                                                             
+        *to* *the* *API* *documentation* *for* *details* *before* *porting*                                                                          
+        *to* *the* *K* *classes*.                                                                                                                    
+
+25. Check for Qt methods that should be avoided [qmethods]... 1 issue found
+        ./gui/HolyServicesMF.cpp: line#684 QWidget::showNormal (1)         
+        A few Qt methods should be avoided because they don't work as      
+        expected or because you need to really be an expert to use them    
+        correctly. <http://techbase.kde.org/Policies/API_to_Avoid> for more
+        information.                                                       
+
+26. Check for QMIN and QMAX macros [qminmax]... Ok!
+
+27. Check for classes that should use the 'Q_OBJECT' macro [qobject]... Ok!
+
+28. Check for signals: and slots: [sigsandslots]... Ok!
+
+29. Check for spelling errors [spelling]... 12 issues found
+        ./persistence/BasicClassStorage.h: line#24[containg] (1)
+        ./gui/CalendarWidgetPrivate.cpp: line#21[adapated] (1)  
+        ./gui/CalendarView.h: line#21[adapated] (1)             
+        ./gui/CalendarWidgetPrivate.h: line#21[adapated] (1)    
+        ./gui/CalendarWidget.cpp: line#21[adapated] (1)         
+        ./gui/CalendarView.cpp: line#21[adapated] (1)           
+        ./gui/CalendarModel.h: line#21[adapated] (1)            
+        ./gui/CalendarModel.cpp: line#21[adapated] (1)          
+        ./gui/HolyServicesMF.cpp: line#634[preferrably],796[succesfully] (2)
+        ./gui/CalendarWidget.h: line#21[adapated] (1)                       
+        ./output/IExporter.h: line#19[successfull] (1)                      
+        Spelling errors in comments and strings should be fixed as they may 
+        show up later in API documentation, handbooks, etc.  Misspelled     
+        strings make the translator's job harder. Please use US English.    
+
+30. Check for strings used improperly or should be i18n. [strings]... Ok!
+
+31. Check for system calls to replace by KDE or Qt equivalents [syscalls]... 2 issues found
+        ./common/HistoryData.cpp: line#97 getenv[qgetenv],113 getenv[qgetenv] (2)          
+        Some system calls are not portable, please use the suggested                       
+        portable wrapper instead. See kde_file.h                                           
+
+32. Check for typedefs that should be replaced by Qt typedefs [typedefs]... Ok!
+
+==>For File Type designer<==
+1. Check that file ends with a newline [endswithnewline]... Ok!
+
+2. Check for files that need to be fixed by 'fixuifiles' [fixuifiles]... Ok!
+
+3. Check validity of i18n calls [i18ncheckarg]... 5 issues found
+        ./gui/ServiceGenerator.ui: reported ambiguous message by translators; use context call to explain what it refers to line#225,330
+        ./gui/ServiceGenerator.ui: single adjective as message, probably ambiguous; use context call to explain what it refers to line#133
+        ./gui/ServiceDetailDlg.ui: reported ambiguous message by translators; use context call to explain what it refers to line#76       
+        ./gui/OutputOptionsDlg.ui: reported ambiguous message by translators; use context call to explain what it refers to line#64       
+        Make the translators' job easier and detect problems in the usage                                                                 
+        of the i18n() calls. When the fix is not clear, check the Techbase                                                                
+        article at                                                                                                                        
+        <http://techbase.kde.org/Development/Tutorials/Localization/i18n_Kr                                                               
+        azy> for more information.                                                                                                        
+
+4. Check for Qt classes that should not be used [qclasses]... 11 issues found
+        ./gui/ServiceGenerator.ui: QComboBox[KComboBox],QComboBox[KComboBox],QComboBox[KComboBox],QLineEdit[KLineEdit],QComboBox[KComboBox],QComboBox[KComboBox] (6)                                                                                                                                      
+        ./gui/ServiceDetailDlg.ui: QComboBox[KComboBox],QComboBox[KComboBox],QComboBox[KComboBox] (3)                                                
+        ./gui/ChurchEditor.ui: QLineEdit[KLineEdit],QLineEdit[KLineEdit] (2)                                                                         
+        Don't use Qt 4 classes that are deprecated. Additionally make sure                                                                           
+        to use the KDE version of some Qt GUI elements to provide a                                                                                  
+        consistent look and feel for the KDE desktop. The KDE classes are                                                                            
+        not just adding functionalities to the Qt base class and are mostly
+        not even based on the Qt class.
+        <http://techbase.kde.org/Policies/API_to_Avoid> *Please* *refer*
+        *to* *the* *API* *documentation* *for* *details* *before* *porting*
+        *to* *the* *K* *classes*.
+
+5. Check for spelling errors [spelling]... 3 issues found
+        ./gui/AboutDlg.ui: line#62[licence],62[licence],62[licence] (3)
+        Spelling errors in comments and strings should be fixed as they may
+        show up later in API documentation, handbooks, etc.  Misspelled
+        strings make the translator's job harder. Please use US English.
+
+==>For File Type kpartgui<==
+1. Check that file ends with a newline [endswithnewline]... Ok!
+
+2. Check validity of i18n calls [i18ncheckarg]... Ok!
+
+3. Check for spelling errors [spelling]... Ok!
+
+4. Validates kpartgui files using 'xmllint' [validate]... 1 issue found
+        ./gui/winResources.rc: 1: parser error : Start tag expected, '<' not found
+        Please make sure your .rc files conform to the XSD schema found in
+        kdelibs/kdeui/xmlgui/kxmlgui.xsd

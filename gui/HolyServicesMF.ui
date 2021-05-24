@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Jan 'Kovis' Struhar</author>
+ <class>HolyServicesMF</class>
+ <widget class="QMainWindow" name="HolyServicesMF">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Holy Services</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1000</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuHoly_service">
+    <property name="title">
+     <string>Definition</string>
+    </property>
+    <widget class="QMenu" name="menuService_assignment_criteria">
+     <property name="title">
+      <string>Service assignment criteria</string>
+     </property>
+     <addaction name="actionClient_assigned"/>
+     <addaction name="actionIntention_is_filled"/>
+    </widget>
+    <addaction name="actionClients"/>
+    <addaction name="actionPriests"/>
+    <addaction name="actionChurches"/>
+    <addaction name="actionChurch_Detail_Settings"/>
+    <addaction name="actionHolidays"/>
+    <addaction name="separator"/>
+    <addaction name="menuService_assignment_criteria"/>
+    <addaction name="separator"/>
+    <addaction name="actionHoly_service_generator"/>
+    <addaction name="separator"/>
+    <addaction name="actionShift_Services_In_Time"/>
+   </widget>
+   <widget class="QMenu" name="menuPrint">
+    <property name="title">
+     <string>Print</string>
+    </property>
+    <addaction name="actionPrint"/>
+    <addaction name="actionCount_up_stipendia"/>
+   </widget>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew_file"/>
+    <addaction name="actionOpen_file"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave_all"/>
+    <addaction name="separator"/>
+    <addaction name="actionDearchive"/>
+    <addaction name="separator"/>
+    <addaction name="actionImport_CSV"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionHelp_index"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuWeb">
+    <property name="title">
+     <string>Web</string>
+    </property>
+    <addaction name="actionGoogle_Calendar"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionYearAtOnce"/>
+    <addaction name="actionAsTrimesters"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHoly_service"/>
+   <addaction name="menuView"/>
+   <addaction name="menuPrint"/>
+   <addaction name="menuWeb"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>Main toolbar</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionOpen_file"/>
+   <addaction name="separator"/>
+   <addaction name="actionSave_all"/>
+   <addaction name="separator"/>
+   <addaction name="actionHoly_service_generator"/>
+   <addaction name="separator"/>
+   <addaction name="actionPrint"/>
+   <addaction name="separator"/>
+   <addaction name="actionGoogle_Calendar"/>
+  </widget>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="HolyServices.qrc">
+     <normaloff>:/images/exit.png</normaloff>:/images/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="toolTip">
+    <string>Exit from the application</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::QuitRole</enum>
+   </property>
+  </action>
+  <action name="actionPreferences">
+   <property name="text">
+    <string>Preferences ...</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="HolyServices.qrc">
+     <normaloff>:/images/about.png</normaloff>:/images/about.png</iconset>
+   </property>
+   <property name="text">
+    <string>About ...</string>
+   </property>
+   <property name="toolTip">
+    <string>About application</string>
+   </property>
+  </action>
+  <action name="actionClients">
+   <property name="text">
+    <string>Clients ...</string>
+   </property>
+   <property name="toolTip">
+    <string>Client management</string>
+   </property>
+   <property name="statusTip">
+    <string>Maintain list of holy service clients</string>
+   </property>
+  </action>
+  <action name="actionPriests">
+   <property name="text">
+    <string>Priests ...</string>
+   </property>
+   <property name="toolTip">
+    <string>Priest management</string>
+   </property>
+   <property name="statusTip">
+    <string>Maintain list of priests in your parish</string>
+   </property>
+  </action>
+  <action name="actionChurches">
+   <property name="text">
+    <string>Churches ...</string>
+   </property>
+   <property name="toolTip">
+    <string>Churches management</string>
+   </property>
+   <property name="statusTip">
+    <string>Maintain list of churches in your parish</string>
+   </property>
+  </action>
+  <action name="actionHoly_service_generator">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="HolyServices.qrc">
+     <normaloff>:/images/exec.png</normaloff>:/images/exec.png</iconset>
+   </property>
+   <property name="text">
+    <string>Holy Service Generator ...</string>
+   </property>
+   <property name="toolTip">
+    <string>Generate holy services in regular interval</string>
+   </property>
+   <property name="statusTip">
+    <string>Generator lets you create regularly repeated holy services</string>
+   </property>
+  </action>
+  <action name="actionChronological_for_current_year">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Chronological for current year</string>
+   </property>
+  </action>
+  <action name="actionSave_all">
+   <property name="icon">
+    <iconset resource="HolyServices.qrc">
+     <normaloff>:/images/save_all.png</normaloff>:/images/save_all.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="iconText">
+    <string>Save</string>
+   </property>
+   <property name="toolTip">
+    <string>Save all modified objects, happens automatically on program exit</string>
+   </property>
+   <property name="statusTip">
+    <string>Save all modified objects, happens automatically on program exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::WidgetShortcut</enum>
+   </property>
+  </action>
+  <action name="actionPrint">
+   <property name="icon">
+    <iconset resource="HolyServices.qrc">
+     <normaloff>:/images/printer.png</normaloff>:/images/printer.png</iconset>
+   </property>
+   <property name="text">
+    <string>Print ...</string>
+   </property>
+   <property name="toolTip">
+    <string>Export holy services to browser or spreadsheet</string>
+   </property>
+   <property name="statusTip">
+    <string>Export holy services to browser or spreadsheet</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionHelp_index">
+   <property name="icon">
+    <iconset resource="HolyServices.qrc">
+     <normaloff>:/images/help.png</normaloff>:/images/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>Help index</string>
+   </property>
+   <property name="toolTip">
+    <string>Overview of documentation</string>
+   </property>
+   <property name="statusTip">
+    <string>Shows overview documentation</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="actionNew_file">
+   <property name="icon">
+    <iconset resource="HolyServices.qrc">
+     <normaloff>:/images/filenew.png</normaloff>:/images/filenew.png</iconset>
+   </property>
+   <property name="text">
+    <string>New file ...</string>
+   </property>
+   <property name="statusTip">
+    <string>Lets you create new file with holy services</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOpen_file">
+   <property name="icon">
+    <iconset resource="HolyServices.qrc">
+     <normaloff>:/images/fileopen.png</normaloff>:/images/fileopen.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open file ...</string>
+   </property>
+   <property name="statusTip">
+    <string>Load and display holy services from a file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionChurch_Detail_Settings">
+   <property name="icon">
+    <iconset resource="HolyServices.qrc">
+     <normaloff>:/images/holy_services32.png</normaloff>:/images/holy_services32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Church Detail Settings...</string>
+   </property>
+   <property name="toolTip">
+    <string>Detailed settings about the churches</string>
+   </property>
+  </action>
+  <action name="actionDearchive">
+   <property name="text">
+    <string>Dearchive ...</string>
+   </property>
+   <property name="toolTip">
+    <string>Restore archived data file of HolyServices</string>
+   </property>
+  </action>
+  <action name="actionHolidays">
+   <property name="text">
+    <string>Holidays ...</string>
+   </property>
+   <property name="toolTip">
+    <string>Local holiday definition</string>
+   </property>
+  </action>
+  <action name="actionCount_up_stipendia">
+   <property name="icon">
+    <iconset resource="HolyServices.qrc">
+     <normaloff>:/images/math_sum.png</normaloff>:/images/math_sum.png</iconset>
+   </property>
+   <property name="text">
+    <string>Count up stipendia ...</string>
+   </property>
+  </action>
+  <action name="actionShift_Services_In_Time">
+   <property name="text">
+    <string>Shift Services In Time...</string>
+   </property>
+  </action>
+  <action name="actionGoogle_Calendar">
+   <property name="icon">
+    <iconset resource="HolyServices.qrc">
+     <normaloff>:/images/kontact_date.png</normaloff>:/images/kontact_date.png</iconset>
+   </property>
+   <property name="text">
+    <string>Google Calendar...</string>
+   </property>
+  </action>
+  <action name="actionClient_assigned">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Client is assigned</string>
+   </property>
+  </action>
+  <action name="actionIntention_is_filled">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Intention is filled</string>
+   </property>
+  </action>
+  <action name="actionImport_CSV">
+   <property name="text">
+    <string>Import CSV...</string>
+   </property>
+   <property name="toolTip">
+    <string>Import fixed format CSV file</string>
+   </property>
+  </action>
+  <action name="actionYearAtOnce">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Year at once</string>
+   </property>
+   <property name="toolTip">
+    <string>Display entire year at once</string>
+   </property>
+  </action>
+  <action name="actionAsTrimesters">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>As trimesters</string>
+   </property>
+   <property name="toolTip">
+    <string>Display only three months at once</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="9"/>
+ <resources>
+  <include location="HolyServices.qrc"/>
+ </resources>
+ <connections/>
+</ui>

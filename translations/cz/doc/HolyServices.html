@@ -1,0 +1,258 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>M&#353;e svaté</title><meta name="generator" content="DocBook XSL Stylesheets V1.69.1"><meta name="description" content="Krátký návod pro aplikaci M&#353;e svaté"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article" lang="cs"><div class="titlepage"><div><div><h2 class="title"><a name="d51e1"></a>M&#353;e svaté</h2></div><div><div class="author"><h3 class="author"><span class="surname">Jan 'Kovi&#353;' Struhár</span></h3></div></div><div><p class="releaseinfo">1.0.0.18</p></div><div><div class="abstract"><p class="title"><b>Abstrakt</b></p><p>Krátký návod pro aplikaci M&#353;e svaté</p></div></div></div><div></div><hr></div><div class="toc"><p><b>Obsah</b></p><dl><dt><span class="section"><a href="#d51e18">Úvod</a></span></dt><dt><span class="section"><a href="#d51e63">U&#382;ivatelé</a></span></dt><dt><span class="section"><a href="#d51e70">Po&#382;adavky na hardware a software</a></span></dt><dt><span class="section"><a href="#d51e103">Rychlý start</a></span></dt><dt><span class="section"><a href="#d51e168">Vlastnost za vlastností</a></span></dt><dd><dl><dt><span class="section"><a href="#d51e173">Definice dat</a></span></dt><dt><span class="section"><a href="#d51e184">Vytvo&#345;ení m&#353;e svaté</a></span></dt><dt><span class="section"><a href="#colorCode">Co ty barvi&#269;ky znamenají?</a></span></dt><dt><span class="section"><a href="#d51e237">Indikátor u jména m&#283;síce</a></span></dt><dt><span class="section"><a href="#d51e249">Filtrování m&#353;í</a></span></dt><dt><span class="section"><a href="#generator">Generátor m&#353;í svatých</a></span></dt><dt><span class="section"><a href="#d51e313">Výstup</a></span></dt><dt><span class="section"><a href="#d51e410">Automatické ulo&#382;ení</a></span></dt><dt><span class="section"><a href="#d51e423">Lokální definice svátk&#367;</a></span></dt></dl></dd><dt><span class="section"><a href="#d51e442">Soubory v instala&#269;ním adresá&#345;i</a></span></dt><dd><dl><dt><span class="section"><a href="#how_to_translate">Jak p&#345;idat dal&#353;í jazykovou mutaci</a></span></dt></dl></dd><dt><span class="section"><a href="#d51e546">Datové soubory</a></span></dt><dd><dl><dt><span class="section"><a href="#d51e583">Automatická archivace</a></span></dt><dt><span class="section"><a href="#d51e599">Jak p&#345;emístit data na jiný po&#269;íta&#269;</a></span></dt><dt><span class="section"><a href="#d51e606">Rozha&#353;ené kopie datových soubor&#367;</a></span></dt></dl></dd><dt><span class="section"><a href="#d51e618">Parametry programu</a></span></dt><dt><span class="section"><a href="#d51e642">Plány pro dal&#353;í vývoj</a></span></dt></dl></div><div class="section" lang="cs"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d51e18"></a>Úvod</h2></div></div><div></div></div><p>Primární úkol aplikace je vnést p&#345;ehled a uleh&#269;ení do plánování m&#353;í
+    svatých v malých farnostech. Program umo&#382;&#328;uje registraci úmysl&#367; pro m&#353;e
+    svaté podle po&#382;adavk&#367; farník&#367;.</p><p>Autor zaznamenával intence pro m&#353;e svaté po osm let s pomocí
+    p&#345;edch&#367;dce tohoto programu. Zku&#353;enost, kterou p&#345;i tom získal, zúro&#269;il
+    (doufejme) p&#345;i tomto druhém vybudování programu od základ&#367;.</p><p>Mezi hlavní p&#345;ednosti aplikace pat&#345;í:</p><div class="itemizedlist"><ul type="disc"><li><p>lep&#353;í p&#345;ehled o m&#353;ích svatých po celý rok - hlavní obrazovka
+        aplikace p&#345;ipomíná ro&#269;ní kalendá&#345; s barevnými polí&#269;ky znázor&#328;ujícími
+        m&#353;e svaté</p></li><li><p>znovuvyu&#382;ití intencí - p&#345;i vytvo&#345;ení nového záznamu se nabízí
+        výb&#283;r ze seznamu intencí, které klient ud&#283;lal v p&#345;edchozím roce,
+        úmysly bývají &#269;asto podobné</p></li><li><p>farníci n&#283;kdy &#353;patn&#283; vidí - velká písmena na obrazovce
+        zobrazující detaily m&#353;e pomáhají p&#345;i spolupráci s klientem m&#353;e</p></li><li><p>m&#353;e mohou být zobrazené podle slou&#382;ícího kn&#283;ze nebo kostela, tím
+        se získá p&#345;ehled o vytí&#382;ení kn&#283;ze/kostela ve farnosti</p></li><li><p>výstup m&#367;&#382;e být snadno zobrazen na internetu nebo v tabulkovém
+        kalkulátoru</p></li><li><p>nejsou problémy s diakritickými znaménky a kódovými stánkami,
+        aplikace pou&#382;ívá standard <span class="abbrev">UNICODE</span></p></li><li><p>není t&#345;eba konfigurovat databázové spojeni nebo d&#283;lat jiné úkoly
+        softwarové administrace</p></li><li><p>snadné zálohování, v&#353;echna data jsou v jednom souboru</p></li><li><p>otev&#345;ený programový kód a otev&#345;ený, standardní datový formát -
+        data jsou v prostém textovém formátu <span class="abbrev">XML</span>, který m&#367;&#382;e
+        být snadno zkonvertován do jiného formátu</p></li><li><p>snadno p&#345;elo&#382;itelný do jiného jazyku - s nevelkým úsilím m&#367;&#382;e
+        být aplikace roz&#353;í&#345;ena tak o dal&#353;í jazykovou mutaci</p></li></ul></div></div><div class="section" lang="cs"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d51e63"></a>U&#382;ivatelé</h2></div></div><div></div></div><p>Aplikace m&#367;&#382;e pomoci kn&#283;&#382;ím i laik&#367;m, kte&#345;í pomáhají p&#345;i zapisování
+    intencí.</p><p>V na&#353;í farnosti obvykle jedna osoba zapí&#353;e v&#283;t&#353;inu intencí pro
+    p&#345;icházející rok b&#283;hem jedné nebo dvou sch&#367;zek s farníky ke konci roku.
+    Zbytek intencí se zapisuje pr&#367;b&#283;&#382;n&#283; b&#283;hem roku - bu&#271;to je pí&#353;e pov&#283;&#345;ená
+    osoba nebo sám kn&#283;z.</p></div><div class="section" lang="cs"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d51e70"></a>Po&#382;adavky na hardware a software</h2></div></div><div></div></div><p>Po&#382;adavky nejsou nijak dramatické - b&#283;&#382;né kancelá&#345;ské PC je naprosto
+    dosta&#269;ující. Rozli&#353;ení obrazovky by m&#283;lo být aspo&#328; 1024 x 768, aby se v
+    m&#283;sí&#269;ních kalendá&#345;ích neobjevovaly posuvníky.</p><p>Je dobré, mít asociovány soubory typu <code class="filename">.xml</code> s prohlí&#382;e&#269;em webových stránek, který
+    zvládá tzv. <span class="abbrev">XSLT</span> transformaci - co&#382; je jakýkoliv moderní
+    browser jako <span class="application">Mozilla Firefox</span>
+    nebo <span class="application"><span class="abbrev">MS</span> Internet
+    Explorer</span>.</p><p>Pokud chcete ud&#283;lat finální úpravu plánu m&#353;í tabulkovým kalkulátorem
+    (tak, jak to d&#283;lá ná&#353; administrátor farnosti), je praktické asociovat typ
+    souboru <code class="filename">.csv</code> s Va&#353;ím tabulkovým
+    kalkulátorem.</p><p>U&#382;ivatelé opera&#269;ních systém&#367; Microsoft mají v&#353;echny pot&#345;ebné
+    komponenty nainstalované instala&#269;ním souborem.</p><p>U u&#382;ivatel&#367; Linuxu se p&#345;edpokládá, &#382;e mají nainstalovány knihovny QT
+    (k dostání na <a href="http://www.trolltech.com/developer/downloads/qt/x11" target="_top">webu Nokia
+    Software</a>). Po&#382;adovaná verze je minimáln&#283; 4.5.0 - tento po&#382;adavek
+    je obvykle spln&#283;n, pokud je na systému nainstalováno prost&#345;edí KDE verze
+    4.x.</p></div><div class="section" lang="cs"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d51e103"></a>Rychlý start</h2></div></div><div></div></div><div class="orderedlist"><ol type="1"><li><p>Poté, co poprvé spustíte aplikaci, nenajde se datový soubor -
+        tak&#382;e Vás pr&#367;vodce vyzve k zadání základních údaj&#367; - jméno kn&#283;ze,
+        kostela a jednoho klienta zadávajícího intence. Pozd&#283;ji v&#353;echny tyto
+        údaje m&#367;&#382;ete m&#283;nit a up&#345;es&#328;ovat v oknech otev&#345;ených p&#345;íkazy
+        <span class="guimenu">Definice</span> &#8594; <span class="guimenuitem">Kn&#283;&#382;í...</span> a <span class="guimenu">Definice</span> &#8594; <span class="guimenuitem">Kostely...</span>. Dvojité kliknutí na polí&#269;ko s údaji zahájí zm&#283;nu,
+        tla&#269;ítkem <span class="guibutton">P&#345;idej
+        &lt;polo&#382;ku&gt;</span> p&#345;idáte nové záznamy.</p><p>Poté co zav&#345;ete obrazovku s definicemi, zm&#283;ny se promítnou do
+        výb&#283;rových polí na p&#345;íkazové li&#353;t&#283; (toolbaru). Pokud vyberete
+        filtrování podle konkrétního kostelu nebo kn&#283;ze, vybraná polo&#382;ka bude
+        p&#345;edvypln&#283;na p&#345;i definici nové m&#353;e svaté.</p></li><li><p>Definujte klienty m&#353;í svatých podobným zp&#367;sobem jako kn&#283;&#382;í.
+        Definice klient&#367; není nutná, nicmén&#283; je prosp&#283;&#353;ná v dlouhodobém
+        výhledu.</p></li><li><p>Vyberte v li&#353;t&#283; rok, pro který chcete definovat m&#353;i
+        svatou.</p></li><li><p>Klikn&#283;te na den v kalendá&#345;ovém listu. Pokud bu&#328;ka dne není
+        zabarvená, není pro daný den (a kn&#283;ze a kostel) nadefinovaná m&#353;e
+        svatá. P&#345;i&#345;a&#271;te nov&#283; vytvo&#345;ené m&#353;i kn&#283;ze, kostel, klienta a úmysl za
+        který bude slou&#382;ena, potvr&#271;te tla&#269;ítkem OK.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Poznámka</h3><p>Polí&#269;ko se m&#353;í svatou nep&#345;i&#345;azenou klientovi má sv&#283;tle modré
+          pozadí. Pokud klient byl p&#345;i&#345;azen, pozadí nabude syt&#283;j&#353;ího odstínu
+          modré. Viz <a href="#colorCode" title="Co ty barvi&#269;ky znamenají?">&#8222;Co ty barvi&#269;ky znamenají?&#8220;</a></p></div></li><li><p>Obvykle musíte ud&#283;lat n&#283;jaký ti&#353;t&#283;ný výstup o plánu m&#353;í. Zvolte
+        p&#345;íkaz <span class="guimenu">Tisk</span> &#8594; <span class="guimenuitem">Tisk</span> (<span><strong class="shortcut"><span><strong class="keycap">Ctrl</strong></span>-<span><strong class="keycap">P</strong></span></strong></span>), vyberte &#269;asový rozsah a po&#382;adovaný výstupní formát.
+        Výstup bude vytvo&#345;en na základ&#283; filtru platného pro hlavní obrazovku,
+        tj. pokud máte zobrazené jednom m&#353;e pro jeden kostel, ve výtisku budou
+        rovn&#283;&#382; jednom m&#353;e z vybraného kostela. Prost&#283; tisknete to, co vidíte v
+        hlavní obrazovce.</p><p>Exportované soubory se nacházejí v systémovém
+        <code class="envar">TEMP</code> adresá&#345;i (obvykle <code class="filename">C:\Documents and Settings\&lt;u&#382;ivatel&gt;\Local
+        Settings\Temp</code>, <code class="filename">/tmp</code> na UNIXech). Formát XML je vhodný pro
+        tiskový výstup, proto&#382;e je zobrazován jako normální webová stránka.
+        Formát CSV m&#367;&#382;e být importován do tabulkových procesor&#367; (OpenCalc, MS
+        Excel). Tam m&#367;&#382;e být výstup upraven podle libosti.</p></li></ol></div><p>Toto je hrubý p&#345;ehled, &#269;t&#283;te dál, chcete-li se dozv&#283;d&#283;t více.</p></div><div class="section" lang="cs"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d51e168"></a>Vlastnost za vlastností</h2></div></div><div></div></div><p>Jd&#283;me dále v popisu vlastností.</p><div class="section" lang="cs"><div class="titlepage"><div><div><h3 class="title"><a name="d51e173"></a>Definice dat</h3></div></div><div></div></div><p>Kn&#283;&#382;í a kostely jsou základní podmínky pro výb&#283;r ze m&#353;í.</p><p>P&#345;i prvním po&#345;izování m&#353;í svatých budete muset vytvo&#345;it mnoho
+      záznam&#367; o klientech, ale jakmile je vytvo&#345;íte (v na&#353;í farnosti je okruh
+      farník&#367; zadávajících m&#353;e svaté dost stabilní), za&#269;nete zúro&#269;ovat svou
+      p&#345;edchozí práci. Kdy&#382; vytvo&#345;íte novou m&#353;i a p&#345;id&#283;líte ji klientovi,
+      objeví se výb&#283;r z úmysl&#367;, za které dal klient slou&#382;it m&#353;i v p&#345;edchozích
+      p&#345;ípadech - tyto úmysly se &#269;asto opakují. Nemusíte samoz&#345;ejm&#283; definovat
+      &#382;ádné klienty nebo vytvo&#345;it jediného zástupného klienta, kterému
+      p&#345;i&#345;adíte v&#353;echny m&#353;e, ale není to p&#345;edpokládaný a doporu&#269;ený zp&#367;sob
+      práce s programem.</p><p>Dvojitý klik na bu&#328;ku tabulky za&#269;ne editaci dat.</p><p>Data jsou se&#345;azena podle prvního sloupce dat abecedn&#283; - pokud jej
+      zm&#283;níte, záznam je znovu za&#345;azen na správné místo, co&#382; n&#283;kdy zp&#367;sobí, &#382;e
+      záznam vám zmizí z pohledu. To je zvlá&#353;&#357; patrné p&#345;i po&#345;ízení nového
+      záznamu. Prozatím to pova&#382;uji víc za vlastnost ne&#382; za chybu...</p></div><div class="section" lang="cs"><div class="titlepage"><div><div><h3 class="title"><a name="d51e184"></a>Vytvo&#345;ení m&#353;e svaté</h3></div></div><div></div></div><p>Dvojklikem na prázdné polí&#269;ko kalendá&#345;e vytvo&#345;íte m&#353;i svatou
+      (respektive záznam o úmyslu na ni). Pokud hodláte zalo&#382;it více záznam&#367;
+      pro jeden den, klikn&#283;te na polí&#269;ko pravým tla&#269;ítkem my&#353;i a z
+      kontextového menu vyberte polo&#382;ku <span class="guimenuitem">Vytvo&#345;it
+      m&#353;i svatou ...</span> a tuto nadefinujte s ohledem na to, aby
+      nekolidovala se stávající m&#353;í (m&#353;emi). V&#353;eobecn&#283; vzato m&#367;&#382;ete d&#283;lat
+      jakékoliv úpravy (zakládání, zm&#283;ny, mazání) prost&#345;ednictvím tohoto
+      kontextového menu - dvojklik provede standardní akci - vytvo&#345;í m&#353;i,
+      pokud v daném dni &#382;ádná není nebo nabídne zm&#283;nu existujících
+      záznam&#367;.</p><p>Mo&#382;ná vás p&#345;ekvapí, &#382;e formulá&#345; zobrazující detaily úmyslu m&#353;e
+      svaté pou&#382;ívá nezvykle velké písmo. To usnad&#328;uje vizuální kontrolu
+      klient&#367;m s vadou zraku, kte&#345;í korigují vá&#353; zápis úmyslu pohledem "p&#345;es
+      rameno".</p><p>Výb&#283;r klienta je snadný, za&#269;n&#283;te psát jeho p&#345;íjmení.</p><div class="section" lang="cs"><div class="titlepage"><div><div><h4 class="title"><a name="collision"></a>Kolize m&#353;í svatých</h4></div></div><div></div></div><p>Dva záznamy jsou pova&#382;ovány za kolizní, pokud jsou p&#345;i&#345;azeny
+        stejnému kn&#283;zi ve stejném kostele v &#269;asech, které se by&#357; &#269;áste&#269;n&#283;
+        protínají. Tato definice zohled&#328;uje fakt, &#382;e ka&#382;dý z kn&#283;z&#367;
+        celebrujících m&#353;i svatou ji m&#367;&#382;e slou&#382;it s jiným úmyslem. Kolize se
+        testují p&#345;i vytvá&#345;ení záznam&#367;.</p></div><div class="section" lang="cs"><div class="titlepage"><div><div><h4 class="title"><a name="d51e201"></a>Vým&#283;na m&#353;í svatých</h4></div></div><div></div></div><p>Podle mých zku&#353;eností klienti inklinují ke
+        &#8222;<span class="quote">k&#353;eftování</span>&#8220; s daty m&#353;í svatých. Klient, který p&#345;i&#353;el
+        pozd&#283;ji, zjistí, &#382;e jeho po&#382;adované datum je u&#382; obsazené a zkou&#353;í
+        p&#345;esv&#283;d&#269;it svého &#353;&#357;astn&#283;j&#353;ího bratra nebo sestru v Kristu, aby si s
+        ním datum m&#353;e vym&#283;nila (typicky ned&#283;le).</p><p>Pokud se dohodnou na vým&#283;n&#283;, zobrazte si detail pro jednu z
+        t&#283;chto m&#353;í, ujist&#283;te se, &#382;e mají být slo&#382;eny ve stejný &#269;as (t&#345;eba od
+        10:00-11:00) - pokud ne, tak &#269;as upravte, nebo&#357; nám jde o vyvolání
+        úmyslné kolize. Stla&#269;te tla&#269;ítko <span class="guibutton">Zm&#283;&#328;
+        datum</span> a upravte datum schváln&#283; tak, aby ob&#283; m&#353;e <a href="#collision" title="Kolize m&#353;í svatých">kolidovaly</a> - vým&#283;na m&#353;í vám pak bude
+        nabídnuta.</p></div></div><div class="section" lang="cs"><div class="titlepage"><div><div><h3 class="title"><a name="colorCode"></a>Co ty barvi&#269;ky znamenají?</h3></div></div><div></div></div><p>Sv&#283;tlou&#269;ce modrá barva signalizuje, &#382;e polí&#269;ko obsahuje jen
+      záznam(y), který nebyl dosud p&#345;i&#345;azen konkrétnímu klientovi. Syt&#283;ji
+      modré polí&#269;ko znamená, &#382;e v daném dni je alespo&#328; jedna obsazená
+      m&#353;e.</p><p>Tento barevný kód je praktický v malých farnostech jako je ta
+      na&#353;e, kde je zpravidla nejvý&#353;e jedna m&#353;e svatá denn&#283;.</p><p>Nicmén&#283;, vý&#353;e zmín&#283;ná modrá je jen standardní nastavení, p&#345;íkazem
+      <span class="guimenu">Definice</span> &#8594; <span class="guimenuitem">Podrobná nastavení
+          kostela...</span> m&#367;&#382;ete vybrat kostel a vybrat barvu pro m&#353;e v n&#283;m
+      slou&#382;ené. Po&#345;ád ov&#353;em platí, &#382;e obsazené m&#353;e mají syt&#283;j&#353;í podbarvení ne&#382;
+      neobsazené. Kdy&#382; je list výb&#283;ru na hlavní li&#353;t&#283; nastavený na <span class="guilabel">V&#353;echny kostely</span> a pro n&#283;které dny je více
+      m&#353;í, pozadí polo&#382;ky v kalendá&#345;i se nastaví na odpovídající barevné
+      prou&#382;ky.</p><p>Na hlavní obrazovce je je&#353;t&#283; jedna pestrobarevná polo&#382;ka - názvy
+      m&#283;síc&#367;. Jejich barvy nesignalizují nic víc ne&#382; ro&#269;ní období, ke kterému
+      nále&#382;í.</p></div><div class="section" lang="cs"><div class="titlepage"><div><div><h3 class="title"><a name="d51e237"></a>Indikátor u jména m&#283;síce</h3></div></div><div></div></div><p>Prou&#382;ek ukazuje procentuální podíl m&#353;í p&#345;i&#345;azených klient&#367;m na
+      celkovém po&#269;tu m&#353;í v daném m&#283;síci. D&#367;vod pro takový indikátor je takový,
+      &#382;e na&#353;i kn&#283;&#382;í cht&#283;jí mít v ka&#382;dém m&#283;síci neobsazenou "rezervu", se
+      kterou se je&#353;t&#283; dá operativn&#283; pracovat.</p><p>Vím nap&#345;íklad, &#382;e máme týdn&#283; 3 m&#353;e svaté. Generátorem m&#353;í svatých
+      ud&#283;lám záznamy, u nich&#382; je vypln&#283;n jen kn&#283;z a kostel, ne v&#353;ak klient.
+      Kdy&#382; klient p&#345;ijde, tak mu &#345;eknu, &#382;e sv&#283;tle modrá polí&#269;ka jsou je&#353;t&#283;
+      volná. On si n&#283;který den vybere, já mu ho p&#345;i&#345;adím, zapí&#353;u úmysl a
+      indikátor &#8222;<span class="quote">volného místa</span>&#8220; u m&#283;síce je aktualizovaný.</p><p>Dává to jistý p&#345;ehled, pokud tímto zp&#367;sobem pracujete, toti&#382; &#382;e si
+      vytvo&#345;íte dop&#345;edu neobsazené m&#353;e, které postupn&#283; obsazujete.</p></div><div class="section" lang="cs"><div class="titlepage"><div><div><h3 class="title"><a name="d51e249"></a>Filtrování m&#353;í</h3></div></div><div></div></div><p>Hlavní ú&#269;el filtrovacích podmínek je, &#382;e umo&#382;&#328;ují flexibilní
+      dotazy na ulo&#382;ené záznamy. Dal&#353;í efekt je, &#382;e filtrování podle
+      konkrétního kn&#283;ze a/nebo kostelu p&#345;ednastaví kn&#283;ze/kostel p&#345;i vytvo&#345;ení
+      nového úmyslu na m&#353;i svatou.</p><p>P&#345;irozen&#283;, pokud vytvo&#345;íte m&#353;i, která neodpovídá nastavenému
+      filtru (filtr je nastaven, aby zobrazoval m&#353;e z kostela &#8222;<span class="quote">A</span>&#8220;
+      a nová m&#353;e je p&#345;id&#283;lena do kostelu &#8222;<span class="quote">B</span>&#8220;), nová m&#353;e není
+      zobrazena na hlavní obrazovce - proto&#382;e tam nemá co d&#283;lat! Nastavte
+      zobrazení, aby ukazovalo kostel &#8222;<span class="quote">B</span>&#8220; nebo v&#353;echny kostely a
+      zase ji uvidíte.</p><p>Posledn&#283; zvolená filtra&#269;ní nastavení (kn&#283;z, kostel a rok) se
+      uchovávají v systémovém registru (Windows) nebo v konfigura&#269;ním souboru
+      (Unix), odkud se na&#269;tou p&#345;i p&#345;í&#353;tím startu programu.</p></div><div class="section" lang="cs"><div class="titlepage"><div><div><h3 class="title"><a name="generator"></a>Generátor m&#353;í svatých</h3></div></div><div></div></div><p>Já (a mí klienti takté&#382;) dávám p&#345;ednost tomu, vid&#283;t v&#353;echny
+      p&#345;íle&#382;itosti ke slou&#382;ení m&#353;e svaté - v na&#353;í vsi nap&#345;íklad máme m&#353;i ka&#382;dé
+      pond&#283;lí, pátek a ned&#283;li. To je ov&#353;em jen hrubý ná&#269;rt situace - ka&#382;dý
+      první pátek v m&#283;síci je slou&#382;ena m&#353;e za obnovu víry v rodinách, ka&#382;dou
+      t&#345;etí ned&#283;li je v na&#353;em kostele m&#353;e za farníky (tento úmysl koluje po
+      v&#353;ech t&#345;ech kostelech ve farnosti).</p><p>To je d&#367;vod, pro&#269; má generátor první dva re&#382;imy. První tvo&#345;í m&#353;e v
+      pravidelných &#269;asových intervalech - ka&#382;dé pond&#283;lí (neboli ka&#382;dé první
+      pond&#283;lí, abychom se vyjád&#345;ili v pojmech generátoru) nebo ka&#382;dou t&#345;etí
+      ned&#283;li jako v uvedeném p&#345;íkladu. V principu máme dv&#283; mo&#382;nosti, jak
+      nastavit ned&#283;lní m&#353;e.</p><div class="orderedlist"><ol type="1"><li><p>Nejd&#345;íve m&#367;&#382;eme vytvo&#345;it nep&#345;i&#345;azenou m&#353;i svatou pro ka&#382;dou
+          ned&#283;li v roce a potom si navolit, aby ka&#382;dou t&#345;etí ned&#283;li byla
+          vytvo&#345;ena m&#353;e pro klienta &#8222;<span class="quote">v&#353;ichni farníci</span>&#8220; s úmyslem
+          &#8222;<span class="quote">za farníky</span>&#8220; <span class="emphasis"><em>NAHRAZUJÍCÍ</em></span>
+          kolidující m&#353;e svaté.</p></li><li><p>M&#367;&#382;u také za&#269;ít tím, &#382;e vytvo&#345;ím nejd&#345;íve ka&#382;dou t&#345;etí ned&#283;li
+          po&#382;adovanou m&#353;i s úmyslem "za farníky" a p&#345;idat pak volné (rozum&#283;j
+          nep&#345;i&#345;azené klient&#367;m) ned&#283;lní m&#353;e - tak&#382;e po&#382;aduji vytvo&#345;ení m&#353;e pro
+          v&#353;echny ned&#283;le a <span class="emphasis"><em>P&#344;ESKAKOVAT</em></span> kolidující
+          m&#353;e.</p></li></ol></div><p>Ostatní nastavení generátoru jsou pro zmín&#283;ný druhý úkol -
+      opakování m&#353;í svatých ka&#382;dý první pátek, druhé úterý nebo obecn&#283; n-tý
+      den v m&#283;síci. Tímto zp&#367;sobem se vytvo&#345;í práv&#283; jedna m&#353;e svatá v jednom
+      m&#283;síci.</p><p>Dal&#353;í mo&#382;ností je nastavení b&#283;&#382;ného po&#345;adu bohoslu&#382;eb pro kostel v
+      <span class="guimenu">Definice</span> &#8594; <span class="guimenuitem">Podrobná nastavení
+          kostela</span> a pou&#382;ití tohoto nastavení v generátoru. Je mo&#382;né
+      jakkoli kombinovat uvedené postupy.</p><p>Stiskni tla&#269;ítko <span class="guibutton">Generuj
+      m&#353;e</span> jakmile budete hotov s definicí úkolu.</p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Varování</h3><p>Tak jako se v&#353;emi generátory, m&#283;l byste být opatrný - p&#345;i tro&#353;e
+        neopatrnosti si generátorem m&#367;&#382;ete p&#345;epsat m&#353;e, které jste pracn&#283;
+        zapisoval ru&#269;n&#283;.</p><p>Doporu&#269;uji v novém roce vygenerovat m&#353;e generátorem a doladit
+        následn&#283; detaily ru&#269;ním p&#345;idáním, zm&#283;nou nebo ubráním záznam&#367;.</p></div></div><div class="section" lang="cs"><div class="titlepage"><div><div><h3 class="title"><a name="d51e313"></a>Výstup</h3></div></div><div></div></div><p>Viditelné intence (tj. ty, které pro&#353;ly nastaveným filtrem) mohou
+      být rovnou vyti&#353;t&#283;ny na tiskárn&#283; nebo exportovány do formátu
+      <span class="abbrev">HTML</span> (webová stánka), <span class="abbrev">PDF</span> (Adobe
+      Acrobat), <span class="abbrev">ODF</span> (OpenOffice format), PostScript,
+      <span class="abbrev">CSV</span>, <span class="abbrev">iCal</span> or <span class="abbrev">XML</span>. Je
+      také mo&#382;né data ulo&#382;it do schránky ve formátu kompatibilním s Office
+      aplikacemi (OpenOffice, MS Office).</p><p>Pro v&#353;echny druhy výstupu vyjma iCal nebo XML m&#367;&#382;ete ovlivnit
+      výb&#283;r a po&#345;adí sloupc&#367; tla&#269;ítkem <span class="guibutton">Výb&#283;r
+      sloupc&#367;...</span> v tiskovém dialogu. P&#345;eta&#382;ením sloupc&#367; mezi
+      tabulkami s viditelnými a skrytými sloupci si vytvo&#345;íte uspo&#345;ádání
+      výtisku. Uspo&#345;ádání sloupc&#367; je zapamatováno pro dal&#353;í pou&#382;ití na
+      po&#269;íta&#269;i, na kterém jste je vytvo&#345;ili, nep&#345;ená&#353;í se s datovým souborem -
+      co&#382; znamená, &#382;e na jiném po&#269;íta&#269;i budete mít standardní uspo&#345;ádání
+      sloupc&#367;..</p><p>Pokud chcete zm&#283;nit p&#345;ímo exportovaný soubor, abyste zm&#283;nili obsah
+      &#269;i formu sestavy, doporu&#269;uji Vám m&#283;nit soubor formátu
+      <span class="abbrev">HTML</span>. Mnoho dn&#353;ních editor&#367; jej umo&#382;&#328;uje vizuáln&#283;
+      m&#283;nit, dokument je pak okam&#382;it&#283; publikovatelný na webových stránkách.
+      Také <span class="abbrev">PDF</span> je na webu &#269;asto k vid&#283;ní, ale nedá se snadno
+      m&#283;nit.</p><p>M&#367;&#382;ete také d&#283;lat dodate&#269;né zm&#283;ny do <span class="abbrev">CSV</span> exportu
+      (já to d&#283;lám, proto&#382;e vyu&#382;ívám podmín&#283;ného formátování ke zvýrazn&#283;ní
+      ned&#283;lí ve výtisku). <span class="abbrev">CSV</span> obvykle bývá asociován k
+      aplikaci tabulkového procesoru jako <span class="application">OpenOffice Calc</span> nebo <span class="application">MS Excel</span>.
+      <span class="abbrev">CSV</span> je zám&#283;rn&#283; ulo&#382;en v lokálním kódování opera&#269;ního
+      systému - n&#283;které z populárních aplikací stále mají problémy s kódováním
+      <span class="abbrev">UTF-8</span>. Jako odd&#283;lova&#269; je pou&#382;it st&#345;edník
+      <code class="constant">;</code>, proto&#382;e &#269;árka je velmi b&#283;&#382;ná v textech
+      intencí.</p><p>Formát <span class="abbrev">iCal</span> je pou&#382;íván &#353;irokou paletou &#269;asových
+      organizér&#367; a kalendá&#345;ových aplikací, jako nap&#345;íklad web GoogleCalendar,
+      IBM LotusNotes, Microsoft Outlook, KOrganizer... Mají funkci, která
+      naimportuje soubor s intencemi, který jste vyexportovali.</p><p><span class="abbrev">XML</span> export obsahuje v&#353;echny dostupné informace o
+      m&#353;ích svatých - m&#367;&#382;e být zm&#283;n&#283;ný na webovou stránku transforma&#269;ním
+      p&#345;edpisem <code class="filename">defaultReport.xslt</code>, který
+      je v pracovním adresá&#345;i. Pokud jste zb&#283;hlý v pou&#382;ívání po&#269;íta&#269;&#367;, m&#367;&#382;ete
+      si pozm&#283;nit <code class="filename">xslt</code> &#353;ablonu podle
+      pot&#345;eby - v exportovaném souboru si p&#345;itom ov&#283;&#345;te pou&#382;itá jména
+      tag&#367;.</p><p>Je vhodné mít <span class="abbrev">XML</span> soubory asociované k webovému
+      prohlí&#382;e&#269;i schopnému <span class="abbrev">XSLT</span> transformace (<span class="application">Mozilla</span>, <span class="application">Safari</span>, <span class="application">Opera</span>, <span class="abbrev">MSIE</span>) - program
+      zkusí po exportu nový soubor rovnou otev&#345;ít. Ale vzhledem k tomu, &#382;e je
+      dostupný p&#345;ímý export do webových stránek, je tato mo&#382;nost spí&#353;e pro
+      experty.</p></div><div class="section" lang="cs"><div class="titlepage"><div><div><h3 class="title"><a name="d51e410"></a>Automatické ulo&#382;ení</h3></div></div><div></div></div><p>Data jsou automaticky ukládána hned po zm&#283;n&#283; nebo p&#345;i zavírání
+      aplikace.</p><p>M&#367;&#382;ete vynutit ulo&#382;ení kdykoliv skrze menu <span class="guimenu">Soubor</span> &#8594; <span class="guimenuitem">Ulo&#382;it v&#353;echno</span>.</p></div><div class="section" lang="cs"><div class="titlepage"><div><div><h3 class="title"><a name="d51e423"></a>Lokální definice svátk&#367;</h3></div></div><div></div></div><p>Svátky daného dne jsou viditelné v bublinové nápov&#283;d&#283; polí&#269;ka
+      kalendá&#345;e. Mimo obecné svátky, které jsou vid&#283;t v&#382;dy (Velikono&#269;ní a
+      Váno&#269;ní svátky), m&#367;&#382;ete definovat svátky podle vlastní chuti v obrazovce
+      <span class="guimenu">Definice</span> &#8594; <span class="guimenuitem">Svátky ...</span>.</p><p>Definice svátk&#367; jsou ve slo&#382;ce <code class="filename">&lt;instala&#269;ní slo&#382;ka&gt;/holidays</code> specifické
+      pro Vá&#353; jazyk - viz <code class="filename">cs_CZ.txt</code> pro
+      p&#345;íklad. Pokud se rozhodnete pro p&#345;ímou zm&#283;nu souboru, pou&#382;ijte kódování
+      UTF-8.</p></div></div><div class="section" lang="cs"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d51e442"></a>Soubory v instala&#269;ním adresá&#345;i</h2></div></div><div></div></div><div class="variablelist"><dl><dt><span class="term">HolyServices.exe</span></dt><dd><p>Aplikace sama, tento soubor musí být spu&#353;t&#283;n, chcete-li
+          pou&#382;ívat aplikaci.</p></dd><dt><span class="term">holidays/*.txt</span></dt><dd><p>Textové soubory, které obsahují specifické (jazykov&#283; a
+          kulturn&#283;) svátky. Podle aktuálního jazyka jsou na&#269;teny p&#345;íslu&#353;né
+          definice a zobrazeny v bublinové nápov&#283;d&#283; bun&#283;k kalendá&#345;e. Nap&#345;íklad
+          soubor <code class="filename">holidays/cs_CZ.txt</code>
+          obsahuje &#269;eské svátky. Bez obav p&#345;idejte své vlastní svátky pro sv&#367;j
+          jazyk, jen pou&#382;ijte kódování <span class="abbrev">UTF-8</span> pro text.</p></dd><dt><span class="term">defaultReport.xslt</span></dt><dd><p>Výstupní XML data odkazují na tento soubor &#353;ablony, aby byla
+          zobrazena ve webovém prohlí&#382;e&#269;i jako oby&#269;ejná webová (HTML) stránka.
+          Otev&#345;te tento soubor textovým editorem a zm&#283;&#328;te ho, pokud chcete mít
+          více sloupc&#367;, jiné po&#345;adí sloupc&#367; nebo jinou zm&#283;nu v tom, co vidíte
+          ve svém browseru. XSLT &#353;ablona je v&#382;dy p&#345;ikopírována k souboru XML
+          exportu.</p></dd><dt><span class="term">*.qm</span></dt><dd><p>P&#345;eklady u&#382;ivatelského rozhraní. Aplikace je nativn&#283; v
+          angli&#269;tin&#283; (nebo v tom, co autor pova&#382;uje za angli&#269;tinu).</p></dd><dt><span class="term">*.dll</span></dt><dd><p>Programové knihovny pot&#345;ebné pro aplikaci.</p></dd><dt><span class="term">*.xml, *.csv, *.ics, *.html, *.pdf</span></dt><dd><p>To jsou v&#353;echny výstupy, které jste kdy ud&#283;lal. Aplikace nikdy
+          nema&#382;e výstupní soubory, m&#367;&#382;ete je smazat sám, kdy&#382; u&#382; je
+          nepot&#345;ebujete (nebo kdy&#382; pot&#345;ebujete ud&#283;lat místo na disku). Jméno
+          souboru obvykle za&#269;íná &#269;asovým razítkem, uvidíte tedy hned, které
+          jsou ty nejstar&#353;í výstupy.</p></dd><dt><span class="term">untranslated.ts</span></dt><dd><p>Pokud byste cht&#283;li mít aplikaci ve svém vlastním jazyce,
+          neváhejte a p&#345;elo&#382;te fráze v tomto souboru! Více se dozvíte v <a href="#how_to_translate" title="Jak p&#345;idat dal&#353;í jazykovou mutaci">&#8222;Jak p&#345;idat dal&#353;í jazykovou mutaci&#8220;</a>.</p></dd></dl></div><div class="section" lang="cs"><div class="titlepage"><div><div><h3 class="title"><a name="how_to_translate"></a>Jak p&#345;idat dal&#353;í jazykovou mutaci</h3></div></div><div></div></div><p>V instala&#269;ním adresá&#345;i by m&#283;l být soubor <code class="filename">untranslated.ts</code>. To je pravá surovina pro
+      p&#345;eklady u&#382;ivatelského rozhraní, obsahuje v&#353;echna menu, hlá&#353;ení a texty
+      viditelné v programu.</p><p>Pokud chcete mít program ve svém vlastním jazyce, otev&#345;ete tento
+      soubor v editoru schopném pracovat s kódováním <span class="abbrev">UTF-8</span>
+      nebo Unicode (Windows <span class="application">Notepad</span>, <a href="http://www.vim.org" target="_top"><span class="application">vim</span></a>, <span class="application">PSPad</span>) a vpisujte p&#345;eklady textu uvedeného
+      v elementu <code class="sgmltag-element">source</code> mezi tagy <code class="sgmltag-starttag">&lt;translation&gt;</code><code class="sgmltag-endtag">&lt;/translation&gt;</code>. Respektujte p&#345;itom ob&#269;asné pokyny
+      pro p&#345;ekladatele mezi tagy <code class="sgmltag-element">comment</code>.
+      Ujist&#283;te se, &#382;e ukládáte soubor ve formátu UTF-8 nebo Unicode, ne ve své
+      lokální kódové stránce.</p><p>Samoz&#345;ejm&#283;, &#382;e pokud jste náhodou vývojá&#345; a máte nainstalovaný QT
+      vývojá&#345;ský balí&#269;ek (co&#382; se m&#367;&#382;e stát zejména u&#382;ivatel&#367;m unixového
+      desktopového prost&#345;edí KDE), oddejte se luxusu p&#345;i p&#345;ekládání v programu
+      k tomu specializovanému - <span class="application">QT Linguist</span>.</p><p>Druhá v&#283;c, kterou je t&#345;eba p&#345;elo&#382;it, je soubor <code class="filename">defaultReport.xslt</code>. P&#345;elo&#382;te texty pro
+      hlavi&#269;ku tabulky (popisy sloupc&#367;) mezi HTML tagy <code class="sgmltag-element">TH</code>.</p><p>Po&#353;lete mi, prosím, p&#345;eklad a já ho zve&#345;ejním tak rychle, jak to
+      jen p&#367;jde. Odm&#283;na vás nemine! P&#345;idám Va&#353;e jméno do souboru credits (=
+      zaslou&#382;ili se o program), pokud nebudete proti tomu :-)</p></div></div><div class="section" lang="cs"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d51e546"></a>Datové soubory</h2></div></div><div></div></div><p>Datové soubory mohou být vytvo&#345;eny p&#345;íkazem <span class="guimenu">Soubor</span> &#8594; <span class="guimenuitem">Nový...</span> (<span><strong class="shortcut"><span><strong class="keycap">Ctrl</strong></span>-<span><strong class="keycap"></strong></span></strong></span>) - pr&#367;vodce vytvo&#345;ením souboru Vás provede nezbytnými
+    kroky. Je mo&#382;né mít více datových soubor&#367;, t&#345;eba&#382;e podle mého názoru
+    v&#283;t&#353;ina u&#382;ivatel&#367; vysta&#269;í s jedním souborem, který obsahuje práv&#283; jejich
+    farnost.</p><p>Vice soubor&#367; znamená více omyl&#367; a hledání. Doporu&#269;ujeme mít jeden,
+    hlavní soubor, který je automaticky otvírán p&#345;i startu aplikace. Pokud
+    nem&#283;níte umíst&#283;ní dat, m&#367;&#382;ete málem zapomenout, &#382;e n&#283;jaký datový soubor
+    máte - je automaticky otvírán i ukládán.</p><div class="variablelist"><dl><dt><span class="term">*.holyservices</span></dt><dd><p>Tento soubor obsahuje v&#353;echna data programu. Zálohujte ho
+          pravideln&#283; a máte po starostech se ztrátou dat.</p></dd><dt><span class="term">storedHolyServices.dat</span></dt><dd><p>Datový soubor z verzí p&#345;ed 1.0.0.11. Je jenom jinak
+          pojmenován, ale jinak se nijak neli&#353;í od b&#283;&#382;ných datových
+          soubor&#367;.</p></dd><dt><span class="term">*.archivedHolyServices</span></dt><dd><p>pravideln&#283; zálohované archivní soubory</p></dd></dl></div><div class="section" lang="cs"><div class="titlepage"><div><div><h3 class="title"><a name="d51e583"></a>Automatická archivace</h3></div></div><div></div></div><p>Datové soubory jsou ka&#382;dý týden zálohovány do p&#345;ísu&#353;n&#283;
+      pojmenovaných soubor&#367; v adresá&#345;i <code class="filename">archive</code>.</p><p>Up&#345;ímn&#283; Vám p&#345;eji, abyste je nikdy nemuseli pou&#382;ít. Ale kdyby toho
+      bylo zapot&#345;ebí, pou&#382;ijte funkci <span class="guimenu">Soubor</span> &#8594; <span class="guimenuitem">Vybalit z archívu ...</span> na dekompresi arcivovaného souboru do &#269;itelné formy,
+      kterou m&#367;&#382;ete hned otev&#345;ít.</p></div><div class="section" lang="cs"><div class="titlepage"><div><div><h3 class="title"><a name="d51e599"></a>Jak p&#345;emístit data na jiný po&#269;íta&#269;</h3></div></div><div></div></div><p>Nainstalujte aplikaci na jiný po&#269;íta&#269;, p&#345;ekopírujte datový soubor
+      a m&#367;&#382;ete s ním dále pracovat.</p><p>S datovým souborem se NEP&#344;ENÁ&#352;EJÍ nastavení jako posledn&#283; otev&#345;ené
+      soubory, posledn&#283; vybraný kostel/kn&#283;z, výb&#283;r sloupc&#367; pro export. Tato
+      nastavení jsou v systémových registrech na Windows nebo ve skrytých
+      inicializa&#269;ních souborech na Linuxu.</p></div><div class="section" lang="cs"><div class="titlepage"><div><div><h3 class="title"><a name="d51e606"></a>Rozha&#353;ené kopie datových soubor&#367;</h3></div></div><div></div></div><p>Kdy&#382; &#269;lov&#283;k pracuje s n&#283;kolika kopiemi stejných dat na r&#367;zných
+      po&#269;íta&#269;ích, snadno pozm&#283;ní tyto kopie a ztratí p&#345;ehled o tom, která z
+      nich je ta pravá a sm&#283;rodatná. Pokud se stane, &#382;e máte n&#283;kolik verzí
+      datového souboru jedné farnosti, v jedné jste pozm&#283;nil to, v druhé ono,
+      m&#367;&#382;ete je zcelit dohromady jakýmkoliv textovým editorem, nebo lépe
+      pou&#382;ít specializované nástroje na synchronizaci text&#367; jako <span class="application">diff</span> nebo <a href="http://winmerge.org" target="_top"><span class="application">WinMerge</span></a>.</p></div></div><div class="section" lang="cs"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d51e618"></a>Parametry programu</h2></div></div><div></div></div><p>Program má n&#283;kolik parametr&#367;, se kterými m&#367;&#382;e být spu&#353;t&#283;n z
+    p&#345;íkazové &#345;ádky nebo ze zástupce.</p><div class="variablelist"><dl><dt><span class="term">--language &lt;zkratka zem&#283; a jazyka podle ISO&gt;</span></dt><dd><p>vynutí b&#283;h aplikace s p&#345;eklady a nastaveními daného jazyka
+          (nap&#345;íklad en_US pro angli&#269;tinu, de_DE pro n&#283;m&#269;inu nebo cs_CZ pro
+          &#269;e&#353;tinu. Standardní instalace podporuje tyto 3 jazyky.</p></dd><dt><span class="term">--file &lt;datový souboor&gt;</span></dt><dd><p>otev&#345;e daný soubor hned po startu aplikace</p></dd><dt><span class="term">--help, -?</span></dt><dd><p>krátký p&#345;ehled parametr&#367;</p></dd></dl></div></div><div class="section" lang="cs"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d51e642"></a>Plány pro dal&#353;í vývoj</h2></div></div><div></div></div><p>Budu více ne&#382; &#353;&#357;astný, kdy&#382; m&#367;&#382;u p&#345;idat nový jazykový p&#345;eklad, který
+    zp&#345;ístupní program nové skupin&#283; u&#382;ivatel&#367;.</p><p>Po&#353;lete mi popis vlastnosti, kterou byste pot&#345;eboval a já uvá&#382;ím
+    její naprogramování. Tak je to snadné!</p></div></div></body></html>

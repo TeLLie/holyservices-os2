@@ -1,0 +1,97 @@
+html {
+	font:	14px/19px sans-serif;
+}
+
+a {
+	color:	navy;
+}	
+
+a:hover {
+	
+	color:	red;
+}
+
+.bold {
+	
+	text-decoration: none;
+	font-weight: bold;
+}
+
+hr {
+	border : 2px solid #A9A9A9;
+}
+
+.blockquote, pre.programlisting {
+	
+	background-color:	#F0FFFF;
+	padding:		10px 10px 10px 10px;
+	font-family:		monospace;
+}
+
+.sidebar, .note {
+	
+	border:			thin solid #CCCCCC;
+	background-color:	#F5F5F5;
+	padding:		10px 10px 10px 10px;
+	margin-left:		100px;
+	margin-right:		100px;
+}
+
+.caution {
+	
+	border:			thin solid #CCCCCC;
+	background-color:	#FFFFCC;
+	padding:		10px 10px 10px 10px;
+	margin-left:		100px;
+	margin-right:		100px;
+}
+
+.warning {
+	
+	border:			thin solid #696969;
+	background-color:	#FFFFCC;
+	padding:		10px 10px 10px 10px;
+	margin-left:		100px;
+	margin-right:		100px;
+}
+
+.informalexample p {
+
+	margin-left:		50px;
+	margin-right:		50px;
+}
+
+
+pre.screen {
+
+	padding:		10px 10px 10px 10px;
+	font-family:		monospace;
+	font-weight:		bold;
+	margin-left:		50px;
+	margin-right:		50px;
+}
+
+div.toc, div.author {
+
+	display:	none;
+}
+
+.center {
+
+	text-align:	center;
+}
+
+.informalfigure {
+
+	text-align:	center;
+}
+
+.noborder {
+
+	border:		none;
+}
+
+.guilabel, .guibutton, .guimenu, .guimenuitem, .guisubmenu {
+
+	font-weight:	bold;
+}

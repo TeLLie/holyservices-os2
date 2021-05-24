@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+"http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<article>
+  <title>Mše svaté</title>
+
+  <articleinfo>
+    <date>12-2010</date>
+
+    <author>
+      <surname>Jan 'Koviš' Struhár</surname>
+    </author>
+
+    <releaseinfo>1.0.0.18</releaseinfo>
+
+    <address format="linespecific"><email>kovis@users.sourceforge.net</email></address>
+
+    <abstract>
+      <para>Krátký návod pro aplikaci Mše svaté</para>
+    </abstract>
+  </articleinfo>
+
+  <section>
+    <title>Úvod</title>
+
+    <para>Primární úkol aplikace je vnést přehled a ulehčení do plánování mší
+    svatých v malých farnostech. Program umožňuje registraci úmyslů pro mše
+    svaté podle požadavků farníků.</para>
+
+    <para>Autor zaznamenával intence pro mše svaté po osm let s pomocí
+    předchůdce tohoto programu. Zkušenost, kterou při tom získal, zúročil
+    (doufejme) při tomto druhém vybudování programu od základů.</para>
+
+    <para>Mezi hlavní přednosti aplikace patří:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>lepší přehled o mších svatých po celý rok - hlavní obrazovka
+        aplikace připomíná roční kalendář s barevnými políčky znázorňujícími
+        mše svaté</para>
+      </listitem>
+
+      <listitem>
+        <para>znovuvyužití intencí - při vytvoření nového záznamu se nabízí
+        výběr ze seznamu intencí, které klient udělal v předchozím roce,
+        úmysly bývají často podobné</para>
+      </listitem>
+
+      <listitem>
+        <para>farníci někdy špatně vidí - velká písmena na obrazovce
+        zobrazující detaily mše pomáhají při spolupráci s klientem mše</para>
+      </listitem>
+
+      <listitem>
+        <para>mše mohou být zobrazené podle sloužícího kněze nebo kostela, tím
+        se získá přehled o vytížení kněze/kostela ve farnosti</para>
+      </listitem>
+
+      <listitem>
+        <para>výstup může být snadno zobrazen na internetu nebo v tabulkovém
+        kalkulátoru</para>
+      </listitem>
+
+      <listitem>
+        <para>nejsou problémy s diakritickými znaménky a kódovými stánkami,
+        aplikace používá standard <abbrev>UNICODE</abbrev></para>
+      </listitem>
+
+      <listitem>
+        <para>není třeba konfigurovat databázové spojeni nebo dělat jiné úkoly
+        softwarové administrace</para>
+      </listitem>
+
+      <listitem>
+        <para>snadné zálohování, všechna data jsou v jednom souboru</para>
+      </listitem>
+
+      <listitem>
+        <para>otevřený programový kód a otevřený, standardní datový formát -
+        data jsou v prostém textovém formátu <abbrev>XML</abbrev>, který může
+        být snadno zkonvertován do jiného formátu</para>
+      </listitem>
+
+      <listitem>
+        <para>snadno přeložitelný do jiného jazyku - s nevelkým úsilím může
+        být aplikace rozšířena tak o další jazykovou mutaci</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+
+  <section>
+    <title>Uživatelé</title>
+
+    <para>Aplikace může pomoci kněžím i laikům, kteří pomáhají při zapisování
+    intencí.</para>
+
+    <para>V naší farnosti obvykle jedna osoba zapíše většinu intencí pro
+    přicházející rok během jedné nebo dvou schůzek s farníky ke konci roku.
+    Zbytek intencí se zapisuje průběžně během roku - buďto je píše pověřená
+    osoba nebo sám kněz.</para>
+  </section>
+
+  <section>
+    <title>Požadavky na hardware a software</title>
+
+    <para>Požadavky nejsou nijak dramatické - běžné kancelářské PC je naprosto
+    dostačující. Rozlišení obrazovky by mělo být aspoň 1024 x 768, aby se v
+    měsíčních kalendářích neobjevovaly posuvníky.</para>
+
+    <para>Je dobré, mít asociovány soubory typu <filename
+    moreinfo="none">.xml</filename> s prohlížečem webových stránek, který
+    zvládá tzv. <abbrev>XSLT</abbrev> transformaci - což je jakýkoliv moderní
+    browser jako <application moreinfo="none">Mozilla Firefox</application>
+    nebo <application moreinfo="none"><abbrev>MS</abbrev> Internet
+    Explorer</application>.</para>
+
+    <para>Pokud chcete udělat finální úpravu plánu mší tabulkovým kalkulátorem
+    (tak, jak to dělá náš administrátor farnosti), je praktické asociovat typ
+    souboru <filename moreinfo="none">.csv</filename> s Vaším tabulkovým
+    kalkulátorem.</para>
+
+    <para>Uživatelé operačních systémů Microsoft mají všechny potřebné
+    komponenty nainstalované instalačním souborem.</para>
+
+    <para>U uživatelů Linuxu se předpokládá, že mají nainstalovány knihovny QT
+    (k dostání na <ulink
+    url="http://www.trolltech.com/developer/downloads/qt/x11">webu Nokia
+    Software</ulink>). Požadovaná verze je minimálně 4.5.0 - tento požadavek
+    je obvykle splněn, pokud je na systému nainstalováno prostředí KDE verze
+    4.x.</para>
+  </section>
+
+  <section>
+    <title>Rychlý start</title>
+
+    <orderedlist continuation="restarts" inheritnum="ignore">
+      <listitem>
+        <para>Poté, co poprvé spustíte aplikaci, nenajde se datový soubor -
+        takže Vás průvodce vyzve k zadání základních údajů - jméno kněze,
+        kostela a jednoho klienta zadávajícího intence. Později všechny tyto
+        údaje můžete měnit a upřesňovat v oknech otevřených příkazy
+        <menuchoice moreinfo="none">
+            <guimenu moreinfo="none">Definice</guimenu>
+
+            <guimenuitem moreinfo="none">Kněží...</guimenuitem>
+          </menuchoice> a <menuchoice moreinfo="none">
+            <guimenu moreinfo="none">Definice</guimenu>
+
+            <guimenuitem moreinfo="none">Kostely...</guimenuitem>
+          </menuchoice>. Dvojité kliknutí na políčko s údaji zahájí změnu,
+        tlačítkem <guibutton moreinfo="none">Přidej
+        &lt;položku&gt;</guibutton> přidáte nové záznamy.</para>
+
+        <para>Poté co zavřete obrazovku s definicemi, změny se promítnou do
+        výběrových polí na příkazové liště (toolbaru). Pokud vyberete
+        filtrování podle konkrétního kostelu nebo kněze, vybraná položka bude
+        předvyplněna při definici nové mše svaté.</para>
+      </listitem>
+
+      <listitem>
+        <para>Definujte klienty mší svatých podobným způsobem jako kněží.
+        Definice klientů není nutná, nicméně je prospěšná v dlouhodobém
+        výhledu.</para>
+      </listitem>
+
+      <listitem>
+        <para>Vyberte v liště rok, pro který chcete definovat mši
+        svatou.</para>
+      </listitem>
+
+      <listitem>
+        <para>Klikněte na den v kalendářovém listu. Pokud buňka dne není
+        zabarvená, není pro daný den (a kněze a kostel) nadefinovaná mše
+        svatá. Přiřaďte nově vytvořené mši kněze, kostel, klienta a úmysl za
+        který bude sloužena, potvrďte tlačítkem OK.</para>
+
+        <note>
+          <para>Políčko se mší svatou nepřiřazenou klientovi má světle modré
+          pozadí. Pokud klient byl přiřazen, pozadí nabude sytějšího odstínu
+          modré. Viz <xref linkend="colorCode" /></para>
+        </note>
+      </listitem>
+
+      <listitem>
+        <para>Obvykle musíte udělat nějaký tištěný výstup o plánu mší. Zvolte
+        příkaz <menuchoice moreinfo="none">
+            <shortcut moreinfo="none">
+              <keycombo moreinfo="none">
+                <keycap moreinfo="none">Ctrl</keycap>
+
+                <keycap moreinfo="none">P</keycap>
+              </keycombo>
+            </shortcut>
+
+            <guimenu moreinfo="none">Tisk</guimenu>
+
+            <guimenuitem moreinfo="none">Tisk</guimenuitem>
+          </menuchoice>, vyberte časový rozsah a požadovaný výstupní formát.
+        Výstup bude vytvořen na základě filtru platného pro hlavní obrazovku,
+        tj. pokud máte zobrazené jednom mše pro jeden kostel, ve výtisku budou
+        rovněž jednom mše z vybraného kostela. Prostě tisknete to, co vidíte v
+        hlavní obrazovce.</para>
+
+        <para>Exportované soubory se nacházejí v systémovém
+        <envar>TEMP</envar> adresáři (obvykle <filename class="directory"
+        moreinfo="none">C:\Documents and Settings\&lt;uživatel&gt;\Local
+        Settings\Temp</filename>, <filename class="directory"
+        moreinfo="none">/tmp</filename> na UNIXech). Formát XML je vhodný pro
+        tiskový výstup, protože je zobrazován jako normální webová stránka.
+        Formát CSV může být importován do tabulkových procesorů (OpenCalc, MS
+        Excel). Tam může být výstup upraven podle libosti.</para>
+      </listitem>
+    </orderedlist>
+
+    <para>Toto je hrubý přehled, čtěte dál, chcete-li se dozvědět více.</para>
+  </section>
+
+  <section>
+    <title>Vlastnost za vlastností</title>
+
+    <para>Jděme dále v popisu vlastností.</para>
+
+    <section>
+      <title>Definice dat</title>
+
+      <para>Kněží a kostely jsou základní podmínky pro výběr ze mší.</para>
+
+      <para>Při prvním pořizování mší svatých budete muset vytvořit mnoho
+      záznamů o klientech, ale jakmile je vytvoříte (v naší farnosti je okruh
+      farníků zadávajících mše svaté dost stabilní), začnete zúročovat svou
+      předchozí práci. Když vytvoříte novou mši a přidělíte ji klientovi,
+      objeví se výběr z úmyslů, za které dal klient sloužit mši v předchozích
+      případech - tyto úmysly se často opakují. Nemusíte samozřejmě definovat
+      žádné klienty nebo vytvořit jediného zástupného klienta, kterému
+      přiřadíte všechny mše, ale není to předpokládaný a doporučený způsob
+      práce s programem.</para>
+
+      <para>Dvojitý klik na buňku tabulky začne editaci dat.</para>
+
+      <para>Data jsou seřazena podle prvního sloupce dat abecedně - pokud jej
+      změníte, záznam je znovu zařazen na správné místo, což někdy způsobí, že
+      záznam vám zmizí z pohledu. To je zvlášť patrné při pořízení nového
+      záznamu. Prozatím to považuji víc za vlastnost než za chybu...</para>
+    </section>
+
+    <section>
+      <title>Vytvoření mše svaté</title>
+
+      <para>Dvojklikem na prázdné políčko kalendáře vytvoříte mši svatou
+      (respektive záznam o úmyslu na ni). Pokud hodláte založit více záznamů
+      pro jeden den, klikněte na políčko pravým tlačítkem myši a z
+      kontextového menu vyberte položku <guimenuitem moreinfo="none">Vytvořit
+      mši svatou ...</guimenuitem> a tuto nadefinujte s ohledem na to, aby
+      nekolidovala se stávající mší (mšemi). Všeobecně vzato můžete dělat
+      jakékoliv úpravy (zakládání, změny, mazání) prostřednictvím tohoto
+      kontextového menu - dvojklik provede standardní akci - vytvoří mši,
+      pokud v daném dni žádná není nebo nabídne změnu existujících
+      záznamů.</para>
+
+      <para>Možná vás překvapí, že formulář zobrazující detaily úmyslu mše
+      svaté používá nezvykle velké písmo. To usnadňuje vizuální kontrolu
+      klientům s vadou zraku, kteří korigují váš zápis úmyslu pohledem "přes
+      rameno".</para>
+
+      <para>Výběr klienta je snadný, začněte psát jeho příjmení.</para>
+
+      <section id="collision">
+        <title>Kolize mší svatých</title>
+
+        <para>Dva záznamy jsou považovány za kolizní, pokud jsou přiřazeny
+        stejnému knězi ve stejném kostele v časech, které se byť částečně
+        protínají. Tato definice zohledňuje fakt, že každý z knězů
+        celebrujících mši svatou ji může sloužit s jiným úmyslem. Kolize se
+        testují při vytváření záznamů.</para>
+      </section>
+
+      <section>
+        <title>Výměna mší svatých</title>
+
+        <para>Podle mých zkušeností klienti inklinují ke
+        <quote>kšeftování</quote> s daty mší svatých. Klient, který přišel
+        později, zjistí, že jeho požadované datum je už obsazené a zkouší
+        přesvědčit svého šťastnějšího bratra nebo sestru v Kristu, aby si s
+        ním datum mše vyměnila (typicky neděle).</para>
+
+        <para>Pokud se dohodnou na výměně, zobrazte si detail pro jednu z
+        těchto mší, ujistěte se, že mají být složeny ve stejný čas (třeba od
+        10:00-11:00) - pokud ne, tak čas upravte, neboť nám jde o vyvolání
+        úmyslné kolize. Stlačte tlačítko <guibutton moreinfo="none">Změň
+        datum</guibutton> a upravte datum schválně tak, aby obě mše <link
+        linkend="collision">kolidovaly</link> - výměna mší vám pak bude
+        nabídnuta.</para>
+      </section>
+    </section>
+
+    <section id="colorCode">
+      <title>Co ty barvičky znamenají?</title>
+
+      <para>Světloučce modrá barva signalizuje, že políčko obsahuje jen
+      záznam(y), který nebyl dosud přiřazen konkrétnímu klientovi. Sytěji
+      modré políčko znamená, že v daném dni je alespoň jedna obsazená
+      mše.</para>
+
+      <para>Tento barevný kód je praktický v malých farnostech jako je ta
+      naše, kde je zpravidla nejvýše jedna mše svatá denně.</para>
+
+      <para>Nicméně, výše zmíněná modrá je jen standardní nastavení, příkazem
+      <menuchoice moreinfo="none">
+          <guimenu moreinfo="none">Definice</guimenu>
+
+          <guimenuitem moreinfo="none">Podrobná nastavení
+          kostela...</guimenuitem>
+        </menuchoice> můžete vybrat kostel a vybrat barvu pro mše v něm
+      sloužené. Pořád ovšem platí, že obsazené mše mají sytější podbarvení než
+      neobsazené. Když je list výběru na hlavní liště nastavený na <guilabel
+      moreinfo="none">Všechny kostely</guilabel> a pro některé dny je více
+      mší, pozadí položky v kalendáři se nastaví na odpovídající barevné
+      proužky.</para>
+
+      <para>Na hlavní obrazovce je ještě jedna pestrobarevná položka - názvy
+      měsíců. Jejich barvy nesignalizují nic víc než roční období, ke kterému
+      náleží.</para>
+    </section>
+
+    <section>
+      <title>Indikátor u jména měsíce</title>
+
+      <para>Proužek ukazuje procentuální podíl mší přiřazených klientům na
+      celkovém počtu mší v daném měsíci. Důvod pro takový indikátor je takový,
+      že naši kněží chtějí mít v každém měsíci neobsazenou "rezervu", se
+      kterou se ještě dá operativně pracovat.</para>
+
+      <para>Vím například, že máme týdně 3 mše svaté. Generátorem mší svatých
+      udělám záznamy, u nichž je vyplněn jen kněz a kostel, ne však klient.
+      Když klient přijde, tak mu řeknu, že světle modrá políčka jsou ještě
+      volná. On si některý den vybere, já mu ho přiřadím, zapíšu úmysl a
+      indikátor <quote>volného místa</quote> u měsíce je aktualizovaný.</para>
+
+      <para>Dává to jistý přehled, pokud tímto způsobem pracujete, totiž že si
+      vytvoříte dopředu neobsazené mše, které postupně obsazujete.</para>
+    </section>
+
+    <section>
+      <title>Filtrování mší</title>
+
+      <para>Hlavní účel filtrovacích podmínek je, že umožňují flexibilní
+      dotazy na uložené záznamy. Další efekt je, že filtrování podle
+      konkrétního kněze a/nebo kostelu přednastaví kněze/kostel při vytvoření
+      nového úmyslu na mši svatou.</para>
+
+      <para>Přirozeně, pokud vytvoříte mši, která neodpovídá nastavenému
+      filtru (filtr je nastaven, aby zobrazoval mše z kostela <quote>A</quote>
+      a nová mše je přidělena do kostelu <quote>B</quote>), nová mše není
+      zobrazena na hlavní obrazovce - protože tam nemá co dělat! Nastavte
+      zobrazení, aby ukazovalo kostel <quote>B</quote> nebo všechny kostely a
+      zase ji uvidíte.</para>
+
+      <para>Posledně zvolená filtrační nastavení (kněz, kostel a rok) se
+      uchovávají v systémovém registru (Windows) nebo v konfiguračním souboru
+      (Unix), odkud se načtou při příštím startu programu.</para>
+    </section>
+
+    <section id="generator">
+      <title>Generátor mší svatých</title>
+
+      <para>Já (a mí klienti taktéž) dávám přednost tomu, vidět všechny
+      příležitosti ke sloužení mše svaté - v naší vsi například máme mši každé
+      pondělí, pátek a neděli. To je ovšem jen hrubý náčrt situace - každý
+      první pátek v měsíci je sloužena mše za obnovu víry v rodinách, každou
+      třetí neděli je v našem kostele mše za farníky (tento úmysl koluje po
+      všech třech kostelech ve farnosti).</para>
+
+      <para>To je důvod, proč má generátor první dva režimy. První tvoří mše v
+      pravidelných časových intervalech - každé pondělí (neboli každé první
+      pondělí, abychom se vyjádřili v pojmech generátoru) nebo každou třetí
+      neděli jako v uvedeném příkladu. V principu máme dvě možnosti, jak
+      nastavit nedělní mše.</para>
+
+      <orderedlist continuation="restarts" inheritnum="ignore">
+        <listitem>
+          <para>Nejdříve můžeme vytvořit nepřiřazenou mši svatou pro každou
+          neděli v roce a potom si navolit, aby každou třetí neděli byla
+          vytvořena mše pro klienta <quote>všichni farníci</quote> s úmyslem
+          <quote>za farníky</quote> <emphasis>NAHRAZUJÍCÍ</emphasis>
+          kolidující mše svaté.</para>
+        </listitem>
+
+        <listitem>
+          <para>Můžu také začít tím, že vytvořím nejdříve každou třetí neděli
+          požadovanou mši s úmyslem "za farníky" a přidat pak volné (rozuměj
+          nepřiřazené klientům) nedělní mše - takže požaduji vytvoření mše pro
+          všechny neděle a <emphasis>PŘESKAKOVAT</emphasis> kolidující
+          mše.</para>
+        </listitem>
+      </orderedlist>
+
+      <para>Ostatní nastavení generátoru jsou pro zmíněný druhý úkol -
+      opakování mší svatých každý první pátek, druhé úterý nebo obecně n-tý
+      den v měsíci. Tímto způsobem se vytvoří právě jedna mše svatá v jednom
+      měsíci.</para>
+
+      <para>Další možností je nastavení běžného pořadu bohoslužeb pro kostel v
+      <menuchoice moreinfo="none">
+          <guimenu moreinfo="none">Definice</guimenu>
+
+          <guimenuitem moreinfo="none">Podrobná nastavení
+          kostela</guimenuitem>
+        </menuchoice> a použití tohoto nastavení v generátoru. Je možné
+      jakkoli kombinovat uvedené postupy.</para>
+
+      <para>Stiskni tlačítko <guibutton moreinfo="none">Generuj
+      mše</guibutton> jakmile budete hotov s definicí úkolu.</para>
+
+      <warning>
+        <para>Tak jako se všemi generátory, měl byste být opatrný - při troše
+        neopatrnosti si generátorem můžete přepsat mše, které jste pracně
+        zapisoval ručně.</para>
+
+        <para>Doporučuji v novém roce vygenerovat mše generátorem a doladit
+        následně detaily ručním přidáním, změnou nebo ubráním záznamů.</para>
+      </warning>
+    </section>
+
+    <section>
+      <title>Výstup</title>
+
+      <para>Viditelné intence (tj. ty, které prošly nastaveným filtrem) mohou
+      být rovnou vytištěny na tiskárně nebo exportovány do formátu
+      <abbrev>HTML</abbrev> (webová stánka), <abbrev>PDF</abbrev> (Adobe
+      Acrobat), <abbrev>ODF</abbrev> (OpenOffice format), PostScript,
+      <abbrev>CSV</abbrev>, <abbrev>iCal</abbrev> or <abbrev>XML</abbrev>. Je
+      také možné data uložit do schránky ve formátu kompatibilním s Office
+      aplikacemi (OpenOffice, MS Office).</para>
+
+      <para>Pro všechny druhy výstupu vyjma iCal nebo XML můžete ovlivnit
+      výběr a pořadí sloupců tlačítkem <guibutton moreinfo="none">Výběr
+      sloupců...</guibutton> v tiskovém dialogu. Přetažením sloupců mezi
+      tabulkami s viditelnými a skrytými sloupci si vytvoříte uspořádání
+      výtisku. Uspořádání sloupců je zapamatováno pro další použití na
+      počítači, na kterém jste je vytvořili, nepřenáší se s datovým souborem -
+      což znamená, že na jiném počítači budete mít standardní uspořádání
+      sloupců..</para>
+
+      <para>Pokud chcete změnit přímo exportovaný soubor, abyste změnili obsah
+      či formu sestavy, doporučuji Vám měnit soubor formátu
+      <abbrev>HTML</abbrev>. Mnoho dnšních editorů jej umožňuje vizuálně
+      měnit, dokument je pak okamžitě publikovatelný na webových stránkách.
+      Také <abbrev>PDF</abbrev> je na webu často k vidění, ale nedá se snadno
+      měnit.</para>
+
+      <para>Můžete také dělat dodatečné změny do <abbrev>CSV</abbrev> exportu
+      (já to dělám, protože využívám podmíněného formátování ke zvýraznění
+      nedělí ve výtisku). <abbrev>CSV</abbrev> obvykle bývá asociován k
+      aplikaci tabulkového procesoru jako <application class="software"
+      moreinfo="none">OpenOffice Calc</application> nebo <application
+      class="software" moreinfo="none">MS Excel</application>.
+      <abbrev>CSV</abbrev> je záměrně uložen v lokálním kódování operačního
+      systému - některé z populárních aplikací stále mají problémy s kódováním
+      <abbrev>UTF-8</abbrev>. Jako oddělovač je použit středník
+      <constant>;</constant>, protože čárka je velmi běžná v textech
+      intencí.</para>
+
+      <para>Formát <abbrev>iCal</abbrev> je používán širokou paletou časových
+      organizérů a kalendářových aplikací, jako například web GoogleCalendar,
+      IBM LotusNotes, Microsoft Outlook, KOrganizer... Mají funkci, která
+      naimportuje soubor s intencemi, který jste vyexportovali.</para>
+
+      <para><abbrev>XML</abbrev> export obsahuje všechny dostupné informace o
+      mších svatých - může být změněný na webovou stránku transformačním
+      předpisem <filename moreinfo="none">defaultReport.xslt</filename>, který
+      je v pracovním adresáři. Pokud jste zběhlý v používání počítačů, můžete
+      si pozměnit <filename moreinfo="none">xslt</filename> šablonu podle
+      potřeby - v exportovaném souboru si přitom ověřte použitá jména
+      tagů.</para>
+
+      <para>Je vhodné mít <abbrev>XML</abbrev> soubory asociované k webovému
+      prohlížeči schopnému <abbrev>XSLT</abbrev> transformace (<application
+      moreinfo="none">Mozilla</application>, <application
+      moreinfo="none">Safari</application>, <application
+      moreinfo="none">Opera</application>, <abbrev>MSIE</abbrev>) - program
+      zkusí po exportu nový soubor rovnou otevřít. Ale vzhledem k tomu, že je
+      dostupný přímý export do webových stránek, je tato možnost spíše pro
+      experty.</para>
+    </section>
+
+    <section>
+      <title>Automatické uložení</title>
+
+      <para>Data jsou automaticky ukládána hned po změně nebo při zavírání
+      aplikace.</para>
+
+      <para>Můžete vynutit uložení kdykoliv skrze menu <menuchoice
+          moreinfo="none">
+          <guimenu moreinfo="none">Soubor</guimenu>
+
+          <guimenuitem moreinfo="none">Uložit všechno</guimenuitem>
+        </menuchoice>.</para>
+    </section>
+
+    <section>
+      <title>Lokální definice svátků</title>
+
+      <para>Svátky daného dne jsou viditelné v bublinové nápovědě políčka
+      kalendáře. Mimo obecné svátky, které jsou vidět vždy (Velikonoční a
+      Vánoční svátky), můžete definovat svátky podle vlastní chuti v obrazovce
+      <menuchoice moreinfo="none">
+          <guimenu moreinfo="none">Definice</guimenu>
+
+          <guimenuitem moreinfo="none">Svátky ...</guimenuitem>
+        </menuchoice>.</para>
+
+      <para>Definice svátků jsou ve složce <filename
+      moreinfo="none">&lt;instalační složka&gt;/holidays</filename> specifické
+      pro Váš jazyk - viz <filename moreinfo="none">cs_CZ.txt</filename> pro
+      příklad. Pokud se rozhodnete pro přímou změnu souboru, použijte kódování
+      UTF-8.</para>
+    </section>
+  </section>
+
+  <section>
+    <title>Soubory v instalačním adresáři</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>HolyServices.exe</term>
+
+        <listitem>
+          <para>Aplikace sama, tento soubor musí být spuštěn, chcete-li
+          používat aplikaci.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>holidays/*.txt</term>
+
+        <listitem>
+          <para>Textové soubory, které obsahují specifické (jazykově a
+          kulturně) svátky. Podle aktuálního jazyka jsou načteny příslušné
+          definice a zobrazeny v bublinové nápovědě buněk kalendáře. Například
+          soubor <filename moreinfo="none">holidays/cs_CZ.txt</filename>
+          obsahuje české svátky. Bez obav přidejte své vlastní svátky pro svůj
+          jazyk, jen použijte kódování <abbrev>UTF-8</abbrev> pro text.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>defaultReport.xslt</term>
+
+        <listitem>
+          <para>Výstupní XML data odkazují na tento soubor šablony, aby byla
+          zobrazena ve webovém prohlížeči jako obyčejná webová (HTML) stránka.
+          Otevřte tento soubor textovým editorem a změňte ho, pokud chcete mít
+          více sloupců, jiné pořadí sloupců nebo jinou změnu v tom, co vidíte
+          ve svém browseru. XSLT šablona je vždy přikopírována k souboru XML
+          exportu.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>*.qm</term>
+
+        <listitem>
+          <para>Překlady uživatelského rozhraní. Aplikace je nativně v
+          angličtině (nebo v tom, co autor považuje za angličtinu).</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>*.dll</term>
+
+        <listitem>
+          <para>Programové knihovny potřebné pro aplikaci.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>*.xml, *.csv, *.ics, *.html, *.pdf</term>
+
+        <listitem>
+          <para>To jsou všechny výstupy, které jste kdy udělal. Aplikace nikdy
+          nemaže výstupní soubory, můžete je smazat sám, když už je
+          nepotřebujete (nebo když potřebujete udělat místo na disku). Jméno
+          souboru obvykle začíná časovým razítkem, uvidíte tedy hned, které
+          jsou ty nejstarší výstupy.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>untranslated.ts</term>
+
+        <listitem>
+          <para>Pokud byste chtěli mít aplikaci ve svém vlastním jazyce,
+          neváhejte a přeložte fráze v tomto souboru! Více se dozvíte v <xref
+          linkend="how_to_translate" />.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <section id="how_to_translate">
+      <title>Jak přidat další jazykovou mutaci</title>
+
+      <para>V instalačním adresáři by měl být soubor <filename
+      moreinfo="none">untranslated.ts</filename>. To je pravá surovina pro
+      překlady uživatelského rozhraní, obsahuje všechna menu, hlášení a texty
+      viditelné v programu.</para>
+
+      <para>Pokud chcete mít program ve svém vlastním jazyce, otevřete tento
+      soubor v editoru schopném pracovat s kódováním <abbrev>UTF-8</abbrev>
+      nebo Unicode (Windows <application
+      moreinfo="none">Notepad</application>, <ulink
+      url="http://www.vim.org"><application
+      moreinfo="none">vim</application></ulink>, <application
+      moreinfo="none">PSPad</application>) a vpisujte překlady textu uvedeného
+      v elementu <sgmltag class="element">source</sgmltag> mezi tagy <sgmltag
+      class="starttag">translation</sgmltag><sgmltag
+      class="endtag">translation</sgmltag>. Respektujte přitom občasné pokyny
+      pro překladatele mezi tagy <sgmltag class="element">comment</sgmltag>.
+      Ujistěte se, že ukládáte soubor ve formátu UTF-8 nebo Unicode, ne ve své
+      lokální kódové stránce.</para>
+
+      <para>Samozřejmě, že pokud jste náhodou vývojář a máte nainstalovaný QT
+      vývojářský balíček (což se může stát zejména uživatelům unixového
+      desktopového prostředí KDE), oddejte se luxusu při překládání v programu
+      k tomu specializovanému - <application class="software"
+      moreinfo="none">QT Linguist</application>.</para>
+
+      <para>Druhá věc, kterou je třeba přeložit, je soubor <filename
+      moreinfo="none">defaultReport.xslt</filename>. Přeložte texty pro
+      hlavičku tabulky (popisy sloupců) mezi HTML tagy <sgmltag
+      class="element">TH</sgmltag>.</para>
+
+      <para>Pošlete mi, prosím, překlad a já ho zveřejním tak rychle, jak to
+      jen půjde. Odměna vás nemine! Přidám Vaše jméno do souboru credits (=
+      zasloužili se o program), pokud nebudete proti tomu :-)</para>
+    </section>
+  </section>
+
+  <section>
+    <title>Datové soubory</title>
+
+    <para>Datové soubory mohou být vytvořeny příkazem <menuchoice
+        moreinfo="none">
+        <shortcut moreinfo="none">
+          <keycombo moreinfo="none">
+            <keycap moreinfo="none">Ctrl</keycap>
+
+            <keycap moreinfo="none"></keycap>
+          </keycombo>
+        </shortcut>
+
+        <guimenu moreinfo="none">Soubor</guimenu>
+
+        <guimenuitem moreinfo="none">Nový...</guimenuitem>
+      </menuchoice> - průvodce vytvořením souboru Vás provede nezbytnými
+    kroky. Je možné mít více datových souborů, třebaže podle mého názoru
+    většina uživatelů vystačí s jedním souborem, který obsahuje právě jejich
+    farnost.</para>
+
+    <para>Vice souborů znamená více omylů a hledání. Doporučujeme mít jeden,
+    hlavní soubor, který je automaticky otvírán při startu aplikace. Pokud
+    neměníte umístění dat, můžete málem zapomenout, že nějaký datový soubor
+    máte - je automaticky otvírán i ukládán.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>*.holyservices</term>
+
+        <listitem>
+          <para>Tento soubor obsahuje všechna data programu. Zálohujte ho
+          pravidelně a máte po starostech se ztrátou dat.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>storedHolyServices.dat</term>
+
+        <listitem>
+          <para>Datový soubor z verzí před 1.0.0.11. Je jenom jinak
+          pojmenován, ale jinak se nijak neliší od běžných datových
+          souborů.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>*.archivedHolyServices</term>
+
+        <listitem>
+          <para>pravidelně zálohované archivní soubory</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <section>
+      <title>Automatická archivace</title>
+
+      <para>Datové soubory jsou každý týden zálohovány do přísušně
+      pojmenovaných souborů v adresáři <filename class="directory"
+      moreinfo="none">archive</filename>.</para>
+
+      <para>Upřímně Vám přeji, abyste je nikdy nemuseli použít. Ale kdyby toho
+      bylo zapotřebí, použijte funkci <menuchoice moreinfo="none">
+          <guimenu moreinfo="none">Soubor</guimenu>
+
+          <guimenuitem moreinfo="none">Vybalit z archívu ...</guimenuitem>
+        </menuchoice> na dekompresi arcivovaného souboru do čitelné formy,
+      kterou můžete hned otevřít.</para>
+    </section>
+
+    <section>
+      <title>Jak přemístit data na jiný počítač</title>
+
+      <para>Nainstalujte aplikaci na jiný počítač, překopírujte datový soubor
+      a můžete s ním dále pracovat.</para>
+
+      <para>S datovým souborem se NEPŘENÁŠEJÍ nastavení jako posledně otevřené
+      soubory, posledně vybraný kostel/kněz, výběr sloupců pro export. Tato
+      nastavení jsou v systémových registrech na Windows nebo ve skrytých
+      inicializačních souborech na Linuxu.</para>
+    </section>
+
+    <section>
+      <title>Rozhašené kopie datových souborů</title>
+
+      <para>Když člověk pracuje s několika kopiemi stejných dat na různých
+      počítačích, snadno pozmění tyto kopie a ztratí přehled o tom, která z
+      nich je ta pravá a směrodatná. Pokud se stane, že máte několik verzí
+      datového souboru jedné farnosti, v jedné jste pozměnil to, v druhé ono,
+      můžete je zcelit dohromady jakýmkoliv textovým editorem, nebo lépe
+      použít specializované nástroje na synchronizaci textů jako <application
+      moreinfo="none">diff</application> nebo <ulink
+      url="http://winmerge.org"><application
+      moreinfo="none">WinMerge</application></ulink>.</para>
+    </section>
+  </section>
+
+  <section>
+    <title>Parametry programu</title>
+
+    <para>Program má několik parametrů, se kterými může být spuštěn z
+    příkazové řádky nebo ze zástupce.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>--language &lt;zkratka země a jazyka podle ISO&gt;</term>
+
+        <listitem>
+          <para>vynutí běh aplikace s překlady a nastaveními daného jazyka
+          (například en_US pro angličtinu, de_DE pro němčinu nebo cs_CZ pro
+          češtinu. Standardní instalace podporuje tyto 3 jazyky.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>--file &lt;datový souboor&gt;</term>
+
+        <listitem>
+          <para>otevře daný soubor hned po startu aplikace</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>--help, -?</term>
+
+        <listitem>
+          <para>krátký přehled parametrů</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </section>
+
+  <section>
+    <title>Plány pro další vývoj</title>
+
+    <para>Budu více než šťastný, když můžu přidat nový jazykový překlad, který
+    zpřístupní program nové skupině uživatelů.</para>
+
+    <para>Pošlete mi popis vlastnosti, kterou byste potřeboval a já uvážím
+    její naprogramování. Tak je to snadné!</para>
+  </section>
+</article>
