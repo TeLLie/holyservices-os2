@@ -1,0 +1,8 @@
+P. Vojtech Vlastimil Protivinsky as source of inspiration
+Petr Handlar, P. Petr Stejskal, P. Jindrich Kotvrda
+ for numerous suggestions and error reports
+Xavier Corredor Llano I took graphics from KDE theme NuvoX
+David Brezina for splashscreen and application icon design
+P. Marcel Siskovic for the translation to Slovak language
+P. Jindrich Kotvrda for the translation to Italian language
+Jan Struhar as author
